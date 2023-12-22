@@ -9,3 +9,12 @@ Currently, two official plugins are available:
 
 
 ## Steps for installation
+- Install Node.js
+- download git bash
+- clone this repository
+- ```
+  git clone <url of this repo>
+  ```
+- open terminal inside this folder
+- type ```npm install```
+- then ```npm run dev```
