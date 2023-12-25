@@ -10,12 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@studio-freight/react-lenis": "^0.0.38",
     "framer-motion": "^10.16.16",
     "gsap": "^3.12.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.21.0"
+    "react-locomotive-scroll": "^0.2.2",
+    "react-router-dom": "^6.21.1",
+    "three": "^0.160.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
