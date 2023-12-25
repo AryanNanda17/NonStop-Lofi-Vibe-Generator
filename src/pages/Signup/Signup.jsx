@@ -10,7 +10,7 @@ const Signup = () => {
       transition={{duration: 1, ease:[0.22, 1, 0.36, 1]}}
     >
       <form action="" className=''>
-        <h1 className='text-5xl uppercase tracking-wider text-center'>Sign up</h1>
+        <h1 className='text-5xl uppercase tracking-wider text-center mt-4 mb-8'>Sign up</h1>
 
         <div className='mt-3 pl-4 pr-4 pb-3'>
           <span className='text-2xl'>Username</span>

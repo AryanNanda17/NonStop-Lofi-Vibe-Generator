@@ -24,7 +24,7 @@ const Navbar = () => {
         Logo
       </div>
       <div>
-        <ul className='flex items-center'>
+        <ul className='flex items-center uppercase text-2xl'>
             <Link to='/'><li className='item mr-8 hover:bg-white hover:text-black transition-all duration-300 rounded p-2'>Home</li></Link>
             <Link to='/login'><li className='item mr-8 hover:bg-white hover:text-black transition-all duration-300 rounded p-2'>Log In</li></Link>
             <Link to='/signup'><li className='item mr-8 hover:bg-white hover:text-black transition-all duration-300 rounded p-2'>Sign up</li></Link>
