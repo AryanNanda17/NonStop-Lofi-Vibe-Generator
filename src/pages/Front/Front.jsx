@@ -1,17 +1,28 @@
 import React from 'react'
 import Navbar from '../../components/Navbar'
-import LofiGirl from '../../assets/lofigirl.mp4'
+import { motion } from 'framer-motion'
 import './front.css'
 
 const Front = () => {
   return (
-    <div className='text-white main'>
+    <motion.div className='text-white main'
+      initial={{opacity: 0}}
+      animate={{opacity: 1}}
+      exit={{opacity: 0}}
+      transition={{duration: 1, ease:[0.22, 1, 0.36, 1]}}
+    >
       <Navbar/>
-      <video src={LofiGirl} loop autoPlay muted/>
       <div className='content'>
-        <h1 className='text-center text-4xl'>Welcome to Lofi Vibe</h1>
+        <h1 className='text-center text-4xl text-black'>Welcome to Lofi Vibe</h1>
       </div>
-    </div>
+
+      <div>
+        <h1></h1>
+      </div>
+      <div>
+        <h1></h1>
+      </div>
+    </motion.div>
   )
 }
 
