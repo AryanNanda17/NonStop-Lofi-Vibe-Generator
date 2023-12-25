@@ -18,6 +18,8 @@
     "react-dom": "^18.2.0",
     "react-locomotive-scroll": "^0.2.2",
     "react-router-dom": "^6.21.1",
+    "react-split": "^2.0.14",
+    "split-type": "^0.3.4",
     "three": "^0.160.0"
   },
   "devDependencies": {
