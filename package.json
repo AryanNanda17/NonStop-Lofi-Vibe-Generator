@@ -16,9 +16,12 @@
     "gsap": "^3.12.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-infinite-scroll-component": "^6.1.0",
+    "react-lazy-load-image-component": "^1.6.0",
     "react-locomotive-scroll": "^0.2.2",
     "react-router-dom": "^6.21.1",
     "react-split": "^2.0.14",
+    "simple-input-events": "^2.0.0",
     "split-type": "^0.3.4",
     "three": "^0.160.0"
   },
