@@ -1,11 +1,45 @@
 import React, { useState } from "react";
 import "./login.css";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [show, setShow] = useState(false);
   const [showbutton, setshowbutton] = useState("Show");
 
+  const [formData, setFormData] = useState({});
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      setLoading(true);
+      setError(false);
+      const response = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      const data = await response.json();
+      setLoading(false);
+      if (data.success === false) {
+        setError(true);
+        return;
+      }
+      navigate("/");
+    } catch (error) {
+      setLoading(false);
+      setError(true);
+    }
+  };
   const handleShowButton = () => {
     if (showbutton === "Show" && show === false) {
       setshowbutton("Hide");
@@ -26,7 +60,12 @@ const Login = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
     >
-      <form action="" autoComplete="off" className="z-50">
+      <form
+        onSubmit={handleSubmit}
+        action=""
+        autoComplete="off"
+        className="z-50"
+      >
         <h1 className="text-5xl uppercase tracking-wider text-center">
           Log In
         </h1>
@@ -36,9 +75,11 @@ const Login = () => {
           <br />
           <input
             type="email"
+            id="email"
             placeholder="Enter Email"
             className="mt-3 w-full bg-black border-solid border-2 border-white text-white p-2 rounded-md text-xl"
             autoComplete="false"
+            onChange={handleChange}
           />
           <br />
         </div>
@@ -50,8 +91,10 @@ const Login = () => {
             <input
               type={show ? "text" : "password"}
               placeholder="Password"
+              id="password"
               className="mt-2 w-full bg-black text-white rounded-md p-2 border-solid border-2 border-white text-xl pl-2"
               autoComplete="false"
+              onChange={handleChange}
             />
 
             <span
@@ -70,7 +113,7 @@ const Login = () => {
             type="submit"
             className="mt-8 text-white bg-pink-500 font-semibold w-full p-3 rounded-md text-xl hover:scale-110 transition-all duration-300"
           >
-            Submit
+            {loading ? "Loading..." : "Log In"}
           </button>
         </div>
 
@@ -86,6 +129,7 @@ const Login = () => {
             <span>Github</span>
           </button>
         </div>
+        <p>{error && "Something Went Wrong"}</p>
       </form>
     </motion.div>
   );

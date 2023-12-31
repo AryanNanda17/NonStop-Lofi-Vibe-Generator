@@ -42,12 +42,15 @@ const Front = () => {
           })}
         </div>
 
-        <div>
-          <button>
-            <Link to="/sound">AI Generated Music</Link>
+        <div className="mt-12 ml-44 text-2xl">
+          <button className="mb-5 bg-indigo-700 p-4 rounded-md hover:bg-indigo-900 transition-all duration-300">
+            <Link to="/experience" className="ml-1 mr-6 text-center">
+              Music Experience
+            </Link>
           </button>
-          <button>
-            <Link to="/experience">Music Experience</Link>
+          <br />
+          <button className="bg-indigo-700 p-4 rounded-md hover:bg-indigo-900 transition-all duration-300">
+            <Link to="/sound">AI Generated Music</Link>
           </button>
         </div>
       </div>

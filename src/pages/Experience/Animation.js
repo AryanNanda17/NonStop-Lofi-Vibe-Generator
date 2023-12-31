@@ -204,7 +204,6 @@ void main(){
     }
 
     this.renderer.render(this.scene, this.camera);
-    this.renderId = requestAnimationFrame(this.render.bind(this));
     window.requestAnimationFrame(this.render.bind(this));
   }
 }
