@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main ul{
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    width: 80%;
+    height: 60%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+ul li:hover{
+    opacity: 1 !important;
+}
+
+ul li{
+    z-index: 1;
+}
