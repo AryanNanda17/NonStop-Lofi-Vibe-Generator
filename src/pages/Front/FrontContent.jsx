@@ -60,20 +60,6 @@ const FrontContent = () => {
           {splitWords()}
         </div>
       </div>
-
-      <div className="flex text-white text-3xl p-16 gap-8">
-        <div className="w-1/2">
-          <p>
-            Let Your Emotions Take the Stage: LofiVibe delivers soul-stirring
-            melodies that mirror your feelings. From upbeat rhythms to soothing
-            beats, our immersive music experience adapts to your vibe, painting
-            a musical canvas that resonates with your mood.
-          </p>
-        </div>
-        <div className="w-1/2">
-          <LazyLoadImage src="./images/music.jpg" alt="music" />
-        </div>
-      </div>
     </div>
   );
 };
