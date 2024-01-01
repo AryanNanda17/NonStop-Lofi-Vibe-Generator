@@ -28,7 +28,7 @@ const Front = () => {
       <Navbar />
 
       <div className="w-full">
-        <div className="text-9xl uppercase tracking-wider mx-40 mt-32">
+        <div className="text-9xl uppercase tracking-widest mx-40 mt-32">
           {"LofiVibe".split(" ").map((word, index) => {
             return word === " " ? (
               <div className="head" key={index}>

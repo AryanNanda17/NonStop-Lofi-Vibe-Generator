@@ -1,9 +1,11 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./navbar.css";
+import { useSelector } from "react-redux";
 import gsap from "gsap";
 
 const Navbar = () => {
+  const user = useSelector((state) => state.user);
   useEffect(() => {
     gsap.from(".logo", {
       x: -30,
