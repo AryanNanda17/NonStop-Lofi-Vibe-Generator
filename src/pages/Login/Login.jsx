@@ -2,6 +2,13 @@ import React, { useState } from "react";
 import "./login.css";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import {
+  signInSuccess,
+  signInStart,
+  signInFailure,
+} from "../../redux/user/userSlice";
+import { useDispatch, useSelector } from "react-redux";
+import OAuth from "../../components/OAuth";
 
 const Login = () => {
   const [show, setShow] = useState(false);
@@ -12,15 +19,13 @@ const Login = () => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
-  const [error, setError] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const { loading, error } = useSelector((state) => state.user);
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      setLoading(true);
-      setError(false);
+      dispatch(signInStart());
       const response = await fetch("/api/auth/login", {
         method: "POST",
         headers: {
@@ -29,15 +34,14 @@ const Login = () => {
         body: JSON.stringify(formData),
       });
       const data = await response.json();
-      setLoading(false);
+      dispatch(signInSuccess(data));
       if (data.success === false) {
-        setError(true);
+        dispatch(signInFailure(data));
         return;
       }
       navigate("/");
     } catch (error) {
-      setLoading(false);
-      setError(true);
+      dispatch(signInFailure(error));
     }
   };
   const handleShowButton = () => {
@@ -116,20 +120,9 @@ const Login = () => {
             {loading ? "Loading..." : "Log In"}
           </button>
         </div>
-
         <h1 className="text-white text-center p-2">OR</h1>
-        <div className="text-white mt-2 p-4">
-          <h1 className="mb-2">Sign in with : </h1>
-          <button className="bg-pink-500 w-full p-2 flex justify-center items-center text-xl rounded-md hover:scale-110 transition-all duration-300">
-            <img src="./icons/google.svg" alt="google" className="mr-4" />
-            <span className="">Google</span>
-          </button>
-          <button className="bg-pink-500 w-full mt-3 flex items-center justify-center p-2 text-xl rounded-md hover:scale-110 transition-all duration-300">
-            <img src="./icons/github.svg" alt="github" className="mr-4" />
-            <span>Github</span>
-          </button>
-        </div>
-        <p>{error && "Something Went Wrong"}</p>
+        <OAuth />
+        <p>{error ? error.message || "Something Went Wrong" : ""}</p>
       </form>
     </motion.div>
   );

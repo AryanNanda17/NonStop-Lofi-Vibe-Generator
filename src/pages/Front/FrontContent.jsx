@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 import "./front.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const FrontContent = () => {
   const refs = useRef([]);
@@ -55,8 +54,11 @@ const FrontContent = () => {
   };
   return (
     <div className="bg-black">
-      <div ref={container} className="text-white p-8">
-        <div className="text-7xl uppercase body tracking-wide mt-64">
+      <div
+        ref={container}
+        className="text-white p-8 flex justify-center items-center"
+      >
+        <div className="text-7xl uppercase body tracking-wider mt-64">
           {splitWords()}
         </div>
       </div>
