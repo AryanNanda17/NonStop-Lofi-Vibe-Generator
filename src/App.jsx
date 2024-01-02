@@ -12,6 +12,9 @@ import Space from "./pages/Experience/Space";
 import Underwater from "./pages/Experience/Underwater";
 import Nature from "./pages/Experience/Nature";
 import City from "./pages/Experience/City";
+import Profile from "./pages/Profile/Profile";
+import PrivateRoute from "./components/PrivateRoute";
+import Update from "./pages/Update/Update";
 
 const App = () => {
   const location = useLocation();
@@ -27,6 +30,10 @@ const App = () => {
         <Route path="/underwater" Component={Underwater} />
         <Route path="/nature" Component={Nature} />
         <Route path="/city" Component={City} />
+        <Route element={<PrivateRoute />}>
+          <Route path="/profile" Component={Profile} />
+          <Route path="/update" Component={Update} />
+        </Route>
       </Routes>
     </AnimatePresence>
   );

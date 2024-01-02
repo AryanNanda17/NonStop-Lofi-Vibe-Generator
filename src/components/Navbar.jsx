@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./navbar.css";
-import { useSelector } from "react-redux";
 import gsap from "gsap";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
-  const user = useSelector((state) => state.user);
+  const { currentUser } = useSelector((state) => state.user);
   useEffect(() => {
     gsap.from(".logo", {
       x: -30,
@@ -48,10 +48,18 @@ const Navbar = () => {
               Home
             </Link>
             <Link
-              to="/login"
+              to="/profile"
               className="item mr-8 hover:bg-pink-500 hover:text-white transition-all duration-300 rounded p-2"
             >
-              Log In
+              {currentUser ? (
+                <img
+                  src={currentUser.profilePicture}
+                  alt="profile"
+                  className="h-10 w-10 rounded-full object-cover"
+                />
+              ) : (
+                <h1>Log In</h1>
+              )}
             </Link>
             <Link
               to="/signup"
