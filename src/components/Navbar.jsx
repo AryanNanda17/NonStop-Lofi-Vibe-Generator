@@ -47,18 +47,20 @@ const Navbar = () => {
             >
               Home
             </Link>
-            <Link
-              to="/profile"
-              className="item mr-8 hover:bg-pink-500 hover:text-white transition-all duration-300 rounded p-2"
-            >
+            <Link to="/profile">
               {currentUser ? (
                 <img
                   src={currentUser.profilePicture}
                   alt="profile"
-                  className="h-10 w-10 rounded-full object-cover"
+                  className="item h-10 w-10 mr-4 rounded-full object-cover"
                 />
               ) : (
-                <h1>Log In</h1>
+                <Link
+                  to="/login"
+                  className="item mr-8 hover:bg-pink-500 hover:text-white transition-all duration-300 rounded p-2"
+                >
+                  Log In
+                </Link>
               )}
             </Link>
             <Link

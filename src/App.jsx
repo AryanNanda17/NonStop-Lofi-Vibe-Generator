@@ -19,23 +19,25 @@ import Update from "./pages/Update/Update";
 const App = () => {
   const location = useLocation();
   return (
-    <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
-        <Route index path="/" Component={FrontPage} />
-        <Route path="/login" Component={Login} />
-        <Route path="/signup" Component={Signup} />
-        <Route path="/sound" Component={Sound} />
-        <Route path="/experience" Component={Experience} />
-        <Route path="/space" Component={Space} />
-        <Route path="/underwater" Component={Underwater} />
-        <Route path="/nature" Component={Nature} />
-        <Route path="/city" Component={City} />
-        <Route element={<PrivateRoute />}>
-          <Route path="/profile" Component={Profile} />
-          <Route path="/update" Component={Update} />
-        </Route>
-      </Routes>
-    </AnimatePresence>
+    <div data-barba="container">
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route index path="/" Component={FrontPage} />
+          <Route path="/login" Component={Login} />
+          <Route path="/signup" Component={Signup} />
+          <Route path="/sound" Component={Sound} />
+          <Route path="/experience" Component={Experience} />
+          <Route path="/space" Component={Space} />
+          <Route path="/underwater" Component={Underwater} />
+          <Route path="/nature" Component={Nature} />
+          <Route path="/city" Component={City} />
+          <Route element={<PrivateRoute />}>
+            <Route path="/profile" Component={Profile} />
+            <Route path="/update" Component={Update} />
+          </Route>
+        </Routes>
+      </AnimatePresence>
+    </div>
   );
 };
 
