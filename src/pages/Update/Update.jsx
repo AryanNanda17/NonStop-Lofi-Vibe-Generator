@@ -20,6 +20,7 @@ import {
   signOut,
 } from "../../redux/user/userSlice";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Update = () => {
   const dispatch = useDispatch();
@@ -117,7 +118,13 @@ const Update = () => {
     }
   };
   return (
-    <div className="bg-black h-screen text-white">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+      className="bg-black h-screen text-white"
+    >
       <Navbar />
       <div className="p-3 max-w-lg mx-auto">
         <h1 className="text-4xl font-semibold text-center my-7">Profile</h1>
@@ -197,7 +204,7 @@ const Update = () => {
           {updateSuccess && "User is updated successfully!"}
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
