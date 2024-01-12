@@ -1,67 +1,70 @@
-import React from 'react'
-import { useEffect } from 'react'
-import { motion } from 'framer-motion'
-import { useRef } from 'react';
-import './sound.css'
-import * as THREE from 'three'
-import { CSS2DRenderer } from 'three/examples/jsm/renderers/CSS2DRenderer.js'
-import {EffectComposer} from 'three/examples/jsm/postprocessing/EffectComposer';
-import {RenderPass} from 'three/examples/jsm/postprocessing/RenderPass';
-import {UnrealBloomPass} from 'three/examples/jsm/postprocessing/UnrealBloomPass';
-import {OutputPass} from 'three/examples/jsm/postprocessing/OutputPass';
+import React, { useState } from "react";
+import { useEffect } from "react";
+import { motion } from "framer-motion";
+import { useRef } from "react";
+import "./sound.css";
+import * as THREE from "three";
+import { CSS2DRenderer } from "three/examples/jsm/renderers/CSS2DRenderer.js";
+import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer";
+import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass";
+import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass";
+import { OutputPass } from "three/examples/jsm/postprocessing/OutputPass";
+import { gsap } from "gsap";
 
 const Sound = () => {
-  const refContainer = useRef(null)
+  const refContainer = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [audio, setAudio] = useState(null);
+
   useEffect(() => {
-    const renderer = new THREE.WebGLRenderer({antialias: true});
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-    refContainer.current && refContainer.current.appendChild( renderer.domElement );
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    refContainer.current &&
+      refContainer.current.appendChild(renderer.domElement);
 
     const labelRenderer = new CSS2DRenderer();
     labelRenderer.setSize(window.innerWidth, window.innerHeight);
-    labelRenderer.domElement.style.position = 'absolute';
-    labelRenderer.domElement.style.top = '0px';
-    labelRenderer.domElement.style.pointerEvents = 'none';
-    refContainer.current && refContainer.current.appendChild(labelRenderer.domElement);
-
-
+    labelRenderer.domElement.style.position = "absolute";
+    labelRenderer.domElement.style.top = "0px";
+    labelRenderer.domElement.style.pointerEvents = "none";
+    refContainer.current &&
+      refContainer.current.appendChild(labelRenderer.domElement);
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
-	    45,
-	    window.innerWidth / window.innerHeight,
-	    0.1,
-	    1000
+      45,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      1000
     );
 
     const params = {
-	    red: 1.0,
-	    green: 1.0,
-	    blue: 1.0,
-	    threshold: 0.5,
-	    strength: 0.5,
-	    radius: 0.8
-    }
-    
-    window.addEventListener('dblclick', () => {
-      if(!refContainer.current.fullscreenElement) {
+      red: 1.0,
+      green: 1.0,
+      blue: 1.0,
+      threshold: 0.5,
+      strength: 0.5,
+      radius: 0.8,
+    };
+
+    window.addEventListener("dblclick", () => {
+      if (!refContainer.current.fullscreenElement) {
         refContainer.current.requestFullscreen();
-      }
-      else{
-        if(refContainer.current.exitFullscreenn){
+      } else {
+        if (refContainer.current.exitFullscreenn) {
           refContainer.current.exitFullscreenn();
         }
       }
-    })
+    });
 
     renderer.outputColorSpace = THREE.SRGBColorSpace;
 
     const renderScene = new RenderPass(scene, camera);
-    
+
     const bloomPass = new UnrealBloomPass(
       new THREE.Vector2(window.innerWidth, window.innerHeight)
-    )
+    );
     bloomPass.threshold = params.threshold;
     bloomPass.strength = params.strength;
     bloomPass.radius = params.radius;
@@ -77,12 +80,12 @@ const Sound = () => {
     camera.lookAt(0, 0, 0);
 
     const uniforms = {
-      u_time: {type: 'f', value: 0.0},
-	    u_frequency: {type: 'f', value: 0.0},
-	    u_red: {type: 'f', value: 1.0},
-	    u_green: {type: 'f', value: 1.0},
-	    u_blue: {type: 'f', value: 1.0}
-    }
+      u_time: { type: "f", value: 0.0 },
+      u_frequency: { type: "f", value: 0.0 },
+      u_red: { type: "f", value: 1.0 },
+      u_green: { type: "f", value: 1.0 },
+      u_blue: { type: "f", value: 1.0 },
+    };
 
     const mat = new THREE.ShaderMaterial({
       uniforms: uniforms,
@@ -199,10 +202,10 @@ const Sound = () => {
         void main() {
             gl_FragColor = vec4(vec3(u_red, u_green, u_blue), 1. );
         }
-      `
-    })
+      `,
+    });
 
-    const geo = new THREE.IcosahedronGeometry(4, 30 );
+    const geo = new THREE.IcosahedronGeometry(4, 30);
     const mesh = new THREE.Mesh(geo, mat);
     scene.add(mesh);
     mesh.material.wireframe = true;
@@ -213,55 +216,71 @@ const Sound = () => {
     const sound = new THREE.Audio(listener);
 
     const audioLoader = new THREE.AudioLoader();
-    
-    audioLoader.load('./Beats.mp3', function(buffer){
+
+    audioLoader.load("./Beats.mp3", function (buffer) {
       sound.setBuffer(buffer);
-      window.addEventListener('click', function(){
-        sound.play();
-      })
-    })
+      setAudio(sound);
+    });
 
     const analyser = new THREE.AudioAnalyser(sound, 32);
 
     let mouseX = 0;
     let mouseY = 0;
-    refContainer.current.addEventListener('mousemove', function(e) {
-	  let windowHalfX = window.innerWidth / 2;
-	  let windowHalfY = window.innerHeight / 2;
-	  mouseX = (e.clientX - windowHalfX) / 100;
-	  mouseY = (e.clientY - windowHalfY) / 100;
-  });
+    refContainer.current.addEventListener("mousemove", function (e) {
+      let windowHalfX = window.innerWidth / 2;
+      let windowHalfY = window.innerHeight / 2;
+      mouseX = (e.clientX - windowHalfX) / 100;
+      mouseY = (e.clientY - windowHalfY) / 100;
+    });
 
     const clock = new THREE.Clock();
     function animate() {
-	    camera.position.x += (mouseX - camera.position.x) * .05;
-	    camera.position.y += (-mouseY - camera.position.y) * 0.5;
-	    camera.lookAt(scene.position);
+      camera.position.x += (mouseX - camera.position.x) * 0.05;
+      camera.position.y += (-mouseY - camera.position.y) * 0.5;
+      camera.lookAt(scene.position);
       labelRenderer.render(scene, camera);
-	    uniforms.u_time.value = clock.getElapsedTime();
-	    uniforms.u_frequency.value = analyser.getAverageFrequency();
+      uniforms.u_time.value = clock.getElapsedTime();
+      uniforms.u_frequency.value = analyser.getAverageFrequency();
       bloomComposer.render();
-	    requestAnimationFrame(animate);
-}
+      requestAnimationFrame(animate);
+    }
     animate();
 
-window.addEventListener('resize', function() {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-	  bloomComposer.setSize(window.innerWidth, window.innerHeight);
-    labelRenderer.setSize(window.innerWidth, window.innerHeight);
-});
-  }, [])
-  return (
-    <motion.div className='webgl' ref={refContainer}
-      initial={{opacity: 0}}
-      animate={{opacity: 1}}
-      exit={{opacity: 0}}
-      transition={{duration: 1, ease:[0.22, 1, 0,36, 1]}}
-    >   
-    </motion.div>
-  )
-}
+    window.addEventListener("resize", function () {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      bloomComposer.setSize(window.innerWidth, window.innerHeight);
+      labelRenderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  }, []);
 
-export default Sound
+  const togglePlay = () => {
+    if (audio) {
+      if (!isPlaying) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+  return (
+    <motion.div
+      className="webgl"
+      ref={refContainer}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1, ease: [0.22, 1, 0, 36, 1] }}
+    >
+      <div className="controls">
+        <button onClick={togglePlay} className="text-8xl">
+          {isPlaying ? "Pause" : "Play"}
+        </button>
+      </div>
+    </motion.div>
+  );
+};
+
+export default Sound;

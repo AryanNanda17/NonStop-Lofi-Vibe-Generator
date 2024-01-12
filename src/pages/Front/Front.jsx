@@ -17,6 +17,7 @@ const Front = () => {
       ease: "expo.inOut",
     });
   }, []);
+
   return (
     <motion.div
       className="text-white bg-black h-screen"
@@ -26,7 +27,6 @@ const Front = () => {
       transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
     >
       <Navbar />
-
       <div className="w-full">
         <div className="text-9xl uppercase tracking-widest mx-40 mt-32">
           {"LofiVibe".split(" ").map((word, index) => {

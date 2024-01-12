@@ -1,17 +1,26 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import LofiLoading from "./LofiLoading";
 
 const Loading = () => {
+  const [loading, setLoading] = useState(0);
+  setTimeout(() => {
+    if (loading < 100) {
+      setLoading((prevLoading) => prevLoading + Math.floor(Math.random() * 25));
+    } else {
+      if (loading >= 100) {
+        setLoading(100);
+      }
+    }
+  }, 3000);
   return (
-    <motion.div
-      initial={{opacity: 0}}
-      animate={{opacity: 1}}
-      exit={{opacity: 0}}
-      transition={{duration: 1, ease:[0.22, 1, 0,36, 1]}}
-    >
-      
-    </motion.div>
-  )
-}
+    <div className="bg-black h-screen flex item-center justify-center">
+      <div>
+        <h1 className="text-white text-4xl mt-52">Loading</h1>
+        <div className="text-white"></div>
+      </div>
+    </div>
+  );
+};
 
-export default Loading
+export default Loading;

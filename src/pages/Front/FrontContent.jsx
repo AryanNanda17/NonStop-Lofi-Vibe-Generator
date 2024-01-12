@@ -62,6 +62,41 @@ const FrontContent = () => {
           {splitWords()}
         </div>
       </div>
+      <div className="text-white p-5">
+        <div>
+          <h1 className="text-4xl">Soulful Lofi Beats</h1>
+          <p className="text-2xl mt-3 mb-3">
+            Immerse yourself in an ever-expanding collection of mesmerizing Lofi
+            tracks meticulously crafted by our AI models. Let the gentle rhythms
+            and mellow tunes set the perfect ambiance for relaxation.
+          </p>
+        </div>
+        <div>
+          <h1 className="text-4xl">Infinite Chill Vibes</h1>
+          <p className="text-2xl mt-3 mb-3">
+            Explore an endless stream of chill-out music that adapts to your
+            mood and setting. Whether you're studying, working, or unwinding,
+            LofiVibe delivers the perfect soundtrack for every moment.
+          </p>
+        </div>
+        <div>
+          <h1 className="text-4xl">Personalized Playlists</h1>
+          <p className="text-2xl mt-3 mb-3">
+            Tailor your listening experience. Curate playlists that resonate
+            with your preferences, discovering new AI-generated tracks that
+            match your unique taste in Lofi music.
+          </p>
+        </div>
+        <div>
+          <h1 className="text-4xl">Dive into the LofiVibe</h1>
+          <p className="text-2xl mt-3 mb-3">
+            LofiVibe is your portal to a realm where technology meets
+            tranquility. Step into a universe where relaxation is an art form
+            and where melodies are woven by algorithms, delivering a unique and
+            serene musical journey.
+          </p>
+        </div>
+      </div>
     </div>
   );
 };

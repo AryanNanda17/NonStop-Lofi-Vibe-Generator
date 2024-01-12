@@ -36,7 +36,7 @@ const Navbar = () => {
     });
   }, []);
   return (
-    <div className="sticky bg-black text-white z-10 top-0">
+    <div className="bg-black text-white z-10 bg-opacity-50 backdrop-blur-lg">
       <div className="text-white pt-4 pl-6 pb-4 text-2xl flex items-center justify-between">
         <div className="logo ml-10">Logo</div>
         <div>
