@@ -20,3 +20,18 @@
         stroke-dashoffset: 0;
     }
 }
+
+.button{
+    animation: anim 20s ease;
+}
+
+@keyframes anim {
+    0%{
+        opacity: 0;
+        visibility: hidden;
+    }
+    100%{
+        opacity: 1;
+        visibility: visible;
+    }
+}

@@ -9,7 +9,6 @@ import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass";
 import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass";
 import { OutputPass } from "three/examples/jsm/postprocessing/OutputPass";
-import { gsap } from "gsap";
 
 const Sound = () => {
   const refContainer = useRef(null);
@@ -47,16 +46,6 @@ const Sound = () => {
       strength: 0.5,
       radius: 0.8,
     };
-
-    window.addEventListener("dblclick", () => {
-      if (!refContainer.current.fullscreenElement) {
-        refContainer.current.requestFullscreen();
-      } else {
-        if (refContainer.current.exitFullscreenn) {
-          refContainer.current.exitFullscreenn();
-        }
-      }
-    });
 
     renderer.outputColorSpace = THREE.SRGBColorSpace;
 
@@ -274,7 +263,7 @@ const Sound = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 1, ease: [0.22, 1, 0, 36, 1] }}
     >
-      <div className="controls">
+      <div className="controls fixed bottom-4 left-1/2 transform -translate-x-1/2">
         <button onClick={togglePlay} className="text-8xl">
           {isPlaying ? "Pause" : "Play"}
         </button>

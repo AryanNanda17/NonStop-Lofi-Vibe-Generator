@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Front from "./Front";
 import FrontCenter from "./FrontCenter";
 import FrontContent from "./FrontContent";

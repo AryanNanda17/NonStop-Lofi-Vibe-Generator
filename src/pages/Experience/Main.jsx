@@ -17,6 +17,9 @@ const Main = () => {
         <li className="text-3xl mt-5 p-2">
           <Link to="/brain">The Digital Brain</Link>
         </li>
+        <li className="text-3xl mt-5 p-2">
+          <Link to="/Wave">Wave</Link>
+        </li>
       </ul>
     </div>
   );

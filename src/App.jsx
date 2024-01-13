@@ -14,7 +14,8 @@ import DigitalBrain from "./pages/Experience/DigitalBrain";
 import Main from "./pages/Experience/Main";
 import BigBang from "./pages/Experience/BigBang";
 import Loading from "./pages/loading/Loading";
-import LofiLoading from "./pages/loading/LofiLoading";
+import Wave from "./pages/Experience/Wave";
+import Tunnel from "./pages/loading/Tunnel";
 
 const App = () => {
   const location = useLocation();
@@ -34,7 +35,8 @@ const App = () => {
           </Route>
           <Route path="/brain" Component={DigitalBrain} />
           <Route path="/load" Component={Loading} />
-          <Route path="/lofiload" Component={LofiLoading} />
+          <Route path="/wave" Component={Wave} />
+          <Route path="/tunnel" Component={Tunnel} />
         </Routes>
       </AnimatePresence>
     </div>
