@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.svg{
+    fill-opacity: 0;
+    stroke: #fff;
+    stroke-width: 3px;
+    stroke-dasharray: 4500;
+    animation: draw 30s ease;
+}
+
+@keyframes draw {
+    0% {
+        stroke-dashoffset: 4500;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+.button{
+    animation: anim 20s ease;
+}
+
+@keyframes anim {
+    0%{
+        opacity: 0;
+        visibility: hidden;
+    }
+    100%{
+        opacity: 1;
+        visibility: visible;
+    }
+}
