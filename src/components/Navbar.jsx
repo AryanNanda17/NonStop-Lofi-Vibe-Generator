@@ -43,7 +43,7 @@ const Navbar = () => {
           <div className="flex items-center uppercase text-2xl">
             <Link
               to="/"
-              className="item mr-8 hover:bg-pink-500 hover:text-white transition-all duration-300 rounded p-2"
+              className="item mr-8 bg-gradient-to-r from-violet-600 to-pink-500 transition-all duration-300 rounded-lg p-2"
             >
               Home
             </Link>
@@ -57,7 +57,7 @@ const Navbar = () => {
               ) : (
                 <Link
                   to="/login"
-                  className="item mr-8 hover:bg-pink-500 hover:text-white transition-all duration-300 rounded p-2"
+                  className="item mr-8 bg-gradient-to-r from-violet-600 to-pink-500 transition-all duration-300 rounded-lg p-3"
                 >
                   Log In
                 </Link>
@@ -65,7 +65,7 @@ const Navbar = () => {
             </Link>
             <Link
               to="/signup"
-              className="item mr-8 hover:bg-pink-500 hover:text-white transition-all duration-300 rounded p-2"
+              className="item mr-8 bg-gradient-to-r from-violet-600 to-pink-500 transition-colors duration-300 rounded-lg p-2"
             >
               Sign up
             </Link>

@@ -62,6 +62,12 @@ const Sound = () => {
     bloomComposer.addPass(renderScene);
     bloomComposer.addPass(bloomPass);
 
+    const originalColor = new THREE.Color(
+      params.red,
+      params.green,
+      params.blue
+    );
+
     const outputPass = new OutputPass();
     bloomComposer.addPass(outputPass);
 
@@ -228,6 +234,10 @@ const Sound = () => {
       camera.position.y += (-mouseY - camera.position.y) * 0.5;
       camera.lookAt(scene.position);
       labelRenderer.render(scene, camera);
+      const colorStrength = 0.5; // Adjust the strength of the color change
+      uniforms.u_red.value = originalColor.r + colorStrength * mouseX;
+      uniforms.u_green.value = originalColor.g + colorStrength * mouseY;
+      uniforms.u_blue.value = originalColor.b - colorStrength * mouseX;
       uniforms.u_time.value = clock.getElapsedTime();
       uniforms.u_frequency.value = analyser.getAverageFrequency();
       bloomComposer.render();
