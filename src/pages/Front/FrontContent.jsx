@@ -64,32 +64,40 @@ const FrontContent = () => {
       </div>
       <div className="text-white p-5">
         <div>
-          <h1 className="text-4xl">Soulful Lofi Beats</h1>
-          <p className="text-2xl mt-3 mb-3">
+          <h1 className="text-5xl heading bg-gradient-to-r from-pink-600 to-blue-600 inline-block text-transparent bg-clip-text">
+            Soulful Lofi Beats
+          </h1>
+          <p className="text-2xl mt-3 mb-3 text-gray-500">
             Immerse yourself in an ever-expanding collection of mesmerizing Lofi
             tracks meticulously crafted by our AI models. Let the gentle rhythms
             and mellow tunes set the perfect ambiance for relaxation.
           </p>
         </div>
         <div>
-          <h1 className="text-4xl">Infinite Chill Vibes</h1>
-          <p className="text-2xl mt-3 mb-3">
+          <h1 className="text-5xl heading bg-gradient-to-r from-pink-600 to-blue-600 inline-block text-transparent bg-clip-text">
+            Infinite Chill Vibes
+          </h1>
+          <p className="text-2xl mt-3 mb-3 text-gray-500">
             Explore an endless stream of chill-out music that adapts to your
             mood and setting. Whether you're studying, working, or unwinding,
             LofiVibe delivers the perfect soundtrack for every moment.
           </p>
         </div>
         <div>
-          <h1 className="text-4xl">Personalized Playlists</h1>
-          <p className="text-2xl mt-3 mb-3">
+          <h1 className="text-5xl heading bg-gradient-to-r from-pink-600 to-blue-600 inline-block text-transparent bg-clip-text">
+            Personalized Playlists
+          </h1>
+          <p className="text-2xl mt-3 mb-3 text-gray-500">
             Tailor your listening experience. Curate playlists that resonate
             with your preferences, discovering new AI-generated tracks that
             match your unique taste in Lofi music.
           </p>
         </div>
         <div>
-          <h1 className="text-4xl">Dive into the LofiVibe</h1>
-          <p className="text-2xl mt-3 mb-3">
+          <h1 className="text-5xl heading bg-gradient-to-r from-pink-600 to-blue-600 inline-block text-transparent bg-clip-text">
+            Dive into the LofiVibe
+          </h1>
+          <p className="text-2xl mt-3 mb-3 text-gray-500">
             LofiVibe is your portal to a realm where technology meets
             tranquility. Step into a universe where relaxation is an art form
             and where melodies are woven by algorithms, delivering a unique and
