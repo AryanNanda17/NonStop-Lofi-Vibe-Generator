@@ -6,7 +6,7 @@ const Main = () => {
   return (
     <div className="bg-black h-screen text-white">
       <Navbar />
-      <h1 className="text-center mt-6 text-4xl tracking-wider">
+      <h1 className="text-center text-4xl tracking-wider mt-28">
         Dive into the world of music with these amazing music experiences
       </h1>
 

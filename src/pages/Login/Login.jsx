@@ -115,7 +115,7 @@ const Login = () => {
         <div className="flex items-center justify-center p-4">
           <button
             type="submit"
-            className="mt-8 text-white bg-pink-500 font-semibold w-full p-3 rounded-md text-xl hover:scale-110 transition-all duration-300"
+            className="mt-8 text-white bg-gradient-to-r from-violet-600 to-pink-500 font-semibold w-full p-3 rounded-md text-xl hover:scale-110 transition-all duration-300"
           >
             {loading ? "Loading..." : "Log In"}
           </button>
