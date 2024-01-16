@@ -62,8 +62,8 @@ const FrontContent = () => {
           {splitWords()}
         </div>
       </div>
-      <div className="text-white p-5">
-        <div>
+      <div className="p-5" id="cont">
+        <div className="h-screen flex flex-col justify-center items-center p-5 mt-4">
           <h1 className="text-5xl heading bg-gradient-to-r from-pink-600 to-blue-600 inline-block text-transparent bg-clip-text">
             Soulful Lofi Beats
           </h1>
@@ -73,7 +73,7 @@ const FrontContent = () => {
             and mellow tunes set the perfect ambiance for relaxation.
           </p>
         </div>
-        <div>
+        <div className="h-screen flex flex-col justify-center items-center p-5 mt-4">
           <h1 className="text-5xl heading bg-gradient-to-r from-pink-600 to-blue-600 inline-block text-transparent bg-clip-text">
             Infinite Chill Vibes
           </h1>
@@ -83,7 +83,7 @@ const FrontContent = () => {
             LofiVibe delivers the perfect soundtrack for every moment.
           </p>
         </div>
-        <div>
+        <div className="h-screen flex flex-col justify-center items-center p-5 mt-4">
           <h1 className="text-5xl heading bg-gradient-to-r from-pink-600 to-blue-600 inline-block text-transparent bg-clip-text">
             Personalized Playlists
           </h1>
@@ -93,7 +93,7 @@ const FrontContent = () => {
             match your unique taste in Lofi music.
           </p>
         </div>
-        <div>
+        <div className="h-screen flex flex-col justify-center items-center p-5 mt-4">
           <h1 className="text-5xl heading bg-gradient-to-r from-pink-600 to-blue-600 inline-block text-transparent bg-clip-text">
             Dive into the LofiVibe
           </h1>

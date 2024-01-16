@@ -121,7 +121,7 @@ const Signup = () => {
           <button
             disabled={loading}
             type="submit"
-            className="mt-2 text-white bg-pink-500 font-semibold w-full p-3 rounded-md text-xl hover:scale-110 transition-all duration-300"
+            className="mt-2 text-white bg-gradient-to-r from-violet-600 to-pink-500 font-semibold w-full p-3 rounded-md text-xl hover:scale-110 transition-all duration-300"
           >
             {loading ? "Loading..." : "Create Account"}
           </button>

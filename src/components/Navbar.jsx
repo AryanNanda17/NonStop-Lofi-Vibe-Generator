@@ -36,11 +36,20 @@ const Navbar = () => {
     });
   }, []);
   return (
-    <div className="bg-black text-white z-10 bg-opacity-50 backdrop-blur-lg">
-      <div className="text-white pt-4 pl-6 pb-4 text-2xl flex items-center justify-between">
-        <div className="logo ml-10">Logo</div>
+    <div className="bg-opacity-20 backdrop-filter backdrop-blur-md fixed top-0 left-0 right-0 z-10 navbar">
+      <div className="text-white pt-4 pl-6 pb-4 text-2xl flex items-center justify-end">
+        <div className="logo ml-10 fixed left-5">Logo</div>
+
+        <div className="lg:hidden">
+          <button
+            type="button"
+            className="text-white hover:text-gray-300 focus:outline-none focus:text-gray-300"
+          >
+            ☰
+          </button>
+        </div>
         <div>
-          <div className="flex items-center uppercase text-2xl">
+          <div className="hidden lg:flex items-center uppercase text-2xl">
             <Link
               to="/"
               className="item mr-8 bg-gradient-to-r from-violet-600 to-pink-500 transition-all duration-300 rounded-lg p-2"

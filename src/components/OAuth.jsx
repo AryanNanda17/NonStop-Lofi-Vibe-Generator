@@ -40,14 +40,14 @@ const OAuth = () => {
       <button
         type="button"
         onClick={handleGoogle}
-        className="bg-pink-500 w-full p-2 flex justify-center items-center text-xl rounded-md hover:scale-110 transition-all duration-300"
+        className="bg-gradient-to-r from-violet-600 to-pink-500 w-full p-2 flex justify-center items-center text-xl rounded-md hover:scale-110 transition-all duration-300"
       >
         <img src="./icons/google.svg" alt="google" className="mr-4" />
         <span className="">Google</span>
       </button>
       <button
         type="button"
-        className="bg-pink-500 w-full mt-3 flex items-center justify-center p-2 text-xl rounded-md hover:scale-110 transition-all duration-300"
+        className="bg-gradient-to-r from-violet-600 to-pink-500 w-full mt-3 flex items-center justify-center p-2 text-xl rounded-md hover:scale-110 transition-all duration-300"
       >
         <img src="./icons/github.svg" alt="github" className="mr-4" />
         <span>Github</span>
