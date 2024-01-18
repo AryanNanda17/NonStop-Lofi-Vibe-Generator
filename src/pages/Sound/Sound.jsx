@@ -15,6 +15,17 @@ const Sound = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [audio, setAudio] = useState(null);
 
+  const togglePlay = () => {
+    if (audio) {
+      if (!isPlaying) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
   useEffect(() => {
     const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -228,6 +239,13 @@ const Sound = () => {
       mouseY = (e.clientY - windowHalfY) / 100;
     });
 
+    const handleKeyDown = (event) => {
+      // Check if the pressed key is the spacebar (keyCode 32)
+      if (event.keyCode === 32) {
+        togglePlay();
+      }
+    };
+
     const clock = new THREE.Clock();
     function animate() {
       camera.position.x += (mouseX - camera.position.x) * 0.05;
@@ -245,6 +263,8 @@ const Sound = () => {
     }
     animate();
 
+    window.addEventListener("keydown", handleKeyDown);
+
     window.addEventListener("resize", function () {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
@@ -252,18 +272,11 @@ const Sound = () => {
       bloomComposer.setSize(window.innerWidth, window.innerHeight);
       labelRenderer.setSize(window.innerWidth, window.innerHeight);
     });
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
   }, []);
 
-  const togglePlay = () => {
-    if (audio) {
-      if (!isPlaying) {
-        audio.play();
-      } else {
-        audio.pause();
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
   return (
     <motion.div
       className="webgl"

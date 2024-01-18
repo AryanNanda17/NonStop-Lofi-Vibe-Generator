@@ -16,6 +16,7 @@ import BigBang from "./pages/Experience/BigBang";
 import Loading from "./pages/loading/Loading";
 import Wave from "./pages/Experience/Wave";
 import Tunnel from "./pages/loading/Tunnel";
+import MainPage from "./pages/Front/MainPage";
 
 const App = () => {
   const location = useLocation();
@@ -23,7 +24,7 @@ const App = () => {
     <div>
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
-          <Route index path="/" Component={FrontPage} />
+          <Route index path="/" Component={MainPage} />
           <Route path="/login" Component={Login} />
           <Route path="/signup" Component={Signup} />
           <Route path="/sound" Component={Sound} />
@@ -37,6 +38,7 @@ const App = () => {
           <Route path="/load" Component={Loading} />
           <Route path="/wave" Component={Wave} />
           <Route path="/tunnel" Component={Tunnel} />
+          <Route path="/front" Component={FrontPage} />
         </Routes>
       </AnimatePresence>
     </div>

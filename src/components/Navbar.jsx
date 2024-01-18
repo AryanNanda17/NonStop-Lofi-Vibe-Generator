@@ -38,7 +38,15 @@ const Navbar = () => {
   return (
     <div className="bg-opacity-20 backdrop-filter backdrop-blur-md fixed top-0 left-0 right-0 z-10 navbar">
       <div className="text-white pt-4 pl-6 pb-4 text-2xl flex items-center justify-end">
-        <div className="logo ml-10 fixed left-5">Logo</div>
+        <div className="logo ml-10 fixed left-5">
+          <Link to="/front">
+            <img
+              src="./images/logo.png"
+              alt="logo"
+              className="max-w-16 max-h-16"
+            />
+          </Link>
+        </div>
 
         <div className="lg:hidden">
           <button
@@ -51,27 +59,29 @@ const Navbar = () => {
         <div>
           <div className="hidden lg:flex items-center uppercase text-2xl">
             <Link
-              to="/"
+              to="/front"
               className="item mr-8 bg-gradient-to-r from-violet-600 to-pink-500 transition-all duration-300 rounded-lg p-2"
             >
               Home
             </Link>
-            <Link to="/profile">
-              {currentUser ? (
-                <img
-                  src={currentUser.profilePicture}
-                  alt="profile"
-                  className="item h-10 w-10 mr-4 rounded-full object-cover"
-                />
-              ) : (
-                <Link
-                  to="/login"
-                  className="item mr-8 bg-gradient-to-r from-violet-600 to-pink-500 transition-all duration-300 rounded-lg p-3"
-                >
-                  Log In
+            <div className="hidden lg:flex items-center uppercase text-2xl">
+              {currentUser && (
+                <Link to="/profile">
+                  <img
+                    src={currentUser.profilePicture}
+                    alt="profile"
+                    className="item h-10 w-10 mr-4 rounded-full object-cover"
+                  />
                 </Link>
               )}
-            </Link>
+
+              <Link
+                to="/login"
+                className="item mr-8 bg-gradient-to-r from-violet-600 to-pink-500 transition-all duration-300 rounded-lg p-3"
+              >
+                Log In
+              </Link>
+            </div>
             <Link
               to="/signup"
               className="item mr-8 bg-gradient-to-r from-violet-600 to-pink-500 transition-colors duration-300 rounded-lg p-2"
