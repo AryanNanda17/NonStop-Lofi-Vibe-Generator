@@ -16,7 +16,7 @@ const Profile = () => {
     >
       <Navbar />
       <div>
-        <div className="mt-5">
+        <div className="mt-36">
           <h1 className="text-5xl text-center">Profile</h1>
           <div className="flex items-center justify-center">
             <img
@@ -25,7 +25,7 @@ const Profile = () => {
               className="h-40 w-40 mt-10 rounded-full cursor-pointer"
             />
           </div>
-          <div className="text-center mt-10 flex items-center justify-center gap-5 mr-24">
+          <div className="text-center mt-10 flex items-center justify-center gap-5">
             <h1 className="text-2xl">User Name : </h1>
             <h2 className="text-xl">{currentUser.username}</h2>
           </div>

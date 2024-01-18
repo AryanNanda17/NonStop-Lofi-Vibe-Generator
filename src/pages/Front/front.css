@@ -22,3 +22,8 @@
 .heading{
     font-family: "Plus Jakarta Sans", sans-serif;
 }
+
+.header5{
+    -webkit-text-stroke: 2px white;
+    color: transparent;
+}
