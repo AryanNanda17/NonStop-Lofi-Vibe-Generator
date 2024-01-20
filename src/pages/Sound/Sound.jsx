@@ -279,14 +279,14 @@ const Sound = () => {
 
   return (
     <motion.div
-      className="webgl"
+      className="webgl relative"
       ref={refContainer}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1, ease: [0.22, 1, 0, 36, 1] }}
     >
-      <div className="controls fixed bottom-4 left-1/2 transform -translate-x-1/2">
+      <div className="controls relative bottom-4 left-1/2 transform -translate-x-1/2">
         <button onClick={togglePlay} className="text-8xl">
           {isPlaying ? "Pause" : "Play"}
         </button>
