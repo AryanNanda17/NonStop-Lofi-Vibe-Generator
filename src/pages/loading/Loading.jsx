@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useMemo } from "react";
 import LofiLoading from "./LofiLoading";
-import LoadProgress from "./LoadProgress";
+import "aframe";
 
 const Loading = () => {
   const [loading, setLoading] = useState(0);
-  const [particlesInit, setParticlesInit] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -20,9 +19,30 @@ const Loading = () => {
   }, [loading]);
 
   return (
-    <div className="bg-black h-screen flex item-center justify-center">
-      <div className="w-full h-full flex items-center justify-center">
-        {loading < 100 ? <LoadProgress /> : <LofiLoading />}
+    <div className="bg-black h-screen flex items-center justify-center">
+      <div className="w-full h-full flex items-center justify-center relative">
+        {loading < 100 ? (
+          <>
+            <a-scene>
+              <a-sky src="./images/cyberpunk360.jpg"></a-sky>
+              <a-text
+                value={`Loading ${loading}%`}
+                position="0 2 -5"
+                align="center"
+                width="15"
+                color="#ffffff"
+                font="https://cdn.aframe.io/fonts/Exo2Bold.fnt"
+                shader="msdf"
+                opacity="0.8"
+                wrap-count="15"
+                anchor="center"
+                material="shader: flat; side: double"
+              ></a-text>
+            </a-scene>
+          </>
+        ) : (
+          <LofiLoading />
+        )}
       </div>
     </div>
   );
