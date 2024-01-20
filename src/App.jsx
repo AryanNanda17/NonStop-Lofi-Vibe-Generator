@@ -17,6 +17,7 @@ import Loading from "./pages/loading/Loading";
 import Wave from "./pages/Experience/Wave";
 import Tunnel from "./pages/loading/Tunnel";
 import MainPage from "./pages/Front/MainPage";
+import Spectrogram from "./pages/Sound/Spectrogram";
 
 const App = () => {
   const location = useLocation();
@@ -27,7 +28,7 @@ const App = () => {
           <Route index path="/" Component={MainPage} />
           <Route path="/login" Component={Login} />
           <Route path="/signup" Component={Signup} />
-          <Route path="/sound" Component={Sound} />
+          <Route path="/sound" Component={Spectrogram} />
           <Route path="/experience" Component={Main} />
           <Route path="/bang" Component={BigBang} />
           <Route element={<PrivateRoute />}>

@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import "./front.css";
+import "aframe";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Parallax } from "react-parallax";
 
 const FrontContent = () => {
   const refs = useRef([]);
