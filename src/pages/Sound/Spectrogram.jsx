@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
-import "./sound.css";
+import "./spectro.css";
 
 const Spectrogram = () => {
   const ref = useRef(null);

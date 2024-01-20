@@ -286,7 +286,8 @@ const Sound = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 1, ease: [0.22, 1, 0, 36, 1] }}
     >
-      <div className="controls relative bottom-4 left-1/2 transform -translate-x-1/2">
+      <div className="controls absolute bottom-4 left-1/2 transform -translate-x-1/2">
+        {/* Your existing code remains unchanged */}
         <button onClick={togglePlay} className="text-8xl">
           {isPlaying ? "Pause" : "Play"}
         </button>
