@@ -72,7 +72,7 @@ const Login = () => {
           onSubmit={handleSubmit}
           action=""
           autoComplete="off"
-          className="z-50"
+          className="z-50 p-8"
         >
           <div className="mt-5 pl-4 pr-4 pb-3">
             <span className="text-2xl">Email</span>

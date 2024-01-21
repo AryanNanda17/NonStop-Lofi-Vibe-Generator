@@ -13,6 +13,10 @@ const FrontContent = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     createAnimations();
+
+    return () => {
+      refs.current = [];
+    };
   }, []);
 
   const createAnimations = () => {
@@ -54,17 +58,17 @@ const FrontContent = () => {
     return letters;
   };
   return (
-    <div className="bg-black">
+    <div className="bg-black min-h-screen">
       <div
         ref={container}
         className="text-white p-8 flex justify-center items-center"
       >
-        <div className="text-7xl uppercase body tracking-wider mt-64">
+        <div className="text-4xl uppercase body tracking-wider mt-64">
           {splitWords()}
         </div>
       </div>
-      <div className="mt-16" id="cont">
-        <div className="h-screen flex flex-col justify-center items-center relative mt-16">
+      <div className="mt-60" id="cont">
+        <div className="h-screen flex flex-col justify-center items-center relative">
           <div>
             <img
               src="./images/lofigirl.jpg"
@@ -88,7 +92,7 @@ const FrontContent = () => {
             <img
               src="./images/chill.jpg"
               alt="chill"
-              className="h-full w-screen p-0"
+              className="h-full w-screen p-0 mt-96"
             />
           </div>
           <div className="absolute top-0 left-0 right-0 bottom-0 flex flex-col items-center p-5">

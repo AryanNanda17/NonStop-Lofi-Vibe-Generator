@@ -9,6 +9,8 @@ import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass";
 import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass";
 import { OutputPass } from "three/examples/jsm/postprocessing/OutputPass";
+import { Link } from "react-router-dom";
+import Navbar from "../../components/Navbar";
 
 const Sound = () => {
   const refContainer = useRef(null);
@@ -286,11 +288,46 @@ const Sound = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 1, ease: [0.22, 1, 0, 36, 1] }}
     >
-      <div className="controls absolute bottom-4 left-1/2 transform -translate-x-1/2">
-        {/* Your existing code remains unchanged */}
-        <button onClick={togglePlay} className="text-8xl">
+      <Navbar />
+      <div className="controls absolute top-4 ml-96 z-10">
+        <button
+          onClick={togglePlay}
+          className="text-2xl p-2 bg-gray-800 text-white rounded-full"
+        >
           {isPlaying ? "Pause" : "Play"}
         </button>
+      </div>
+      <div className="controls absolute bottom-4 left-1/2 transform -translate-x-1/2">
+        {/* Your existing code remains unchanged */}
+        <div className="w-full text-center mt-32">
+          <div className="text-9xl p-4 text-center lg:text-9xl uppercase tracking-widest mx-4 lg:mx-40 lg:mt-32 text-white">
+            {"LofiVibe".split(" ").map((word, index) => {
+              return word === " " ? (
+                <div className="head" key={index}>
+                  &nbsp;
+                </div>
+              ) : (
+                <div className="head" key={index}>
+                  {word}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="flex items-center justify-around">
+          <div className="lg:mt-12 mx-4 text-2xl lg:text-2xl mt-24">
+            <button className="mb-3 lg:mb-5 lg:mr-6 p-2 lg:p-4 rounded-md bg-gradient-to-r from-violet-600 to-pink-500 transition-all duration-300">
+              <Link to="/experience" className="ml-1 mr-6 text-center">
+                Music Experience
+              </Link>
+            </button>
+            <br class="lg:hidden" />
+            <button className="p-2 lg:p-4 rounded-md bg-gradient-to-r from-violet-600 to-pink-500 transition-all duration-300">
+              <Link to="/sound">AI Generated Music</Link>
+            </button>
+          </div>
+        </div>
       </div>
     </motion.div>
   );

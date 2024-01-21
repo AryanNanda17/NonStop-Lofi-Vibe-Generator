@@ -7,13 +7,12 @@ import Sound from "../Sound/Sound";
 const FrontPage = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <div className="flex-grow">
-        <Front />
-        <FrontCenter />
-        <FrontContent />
-      </div>
       <div className="mt-auto">
         <Sound />
+      </div>
+      <div className="flex-grow">
+        <FrontCenter />
+        <FrontContent />
       </div>
     </div>
   );

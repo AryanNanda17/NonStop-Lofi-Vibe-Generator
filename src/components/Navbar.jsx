@@ -64,8 +64,8 @@ const Navbar = () => {
             >
               Home
             </Link>
-            <div className="hidden lg:flex items-center uppercase text-2xl">
-              {currentUser && (
+            {currentUser ? (
+              <div className="hidden lg:flex items-center uppercase text-2xl mr-5">
                 <Link to="/profile">
                   <img
                     src={currentUser.profilePicture}
@@ -73,21 +73,23 @@ const Navbar = () => {
                     className="item h-10 w-10 mr-4 rounded-full object-cover"
                   />
                 </Link>
-              )}
-
-              <Link
-                to="/login"
-                className="item mr-8 bg-gradient-to-r from-violet-600 to-pink-500 transition-all duration-300 rounded-lg p-3"
-              >
-                Log In
-              </Link>
-            </div>
-            <Link
-              to="/signup"
-              className="item mr-8 bg-gradient-to-r from-violet-600 to-pink-500 transition-colors duration-300 rounded-lg p-2"
-            >
-              Sign up
-            </Link>
+              </div>
+            ) : (
+              <div className="hidden lg:flex items-center uppercase text-2xl">
+                <Link
+                  to="/login"
+                  className="item mr-8 bg-gradient-to-r from-violet-600 to-pink-500 transition-all duration-300 rounded-lg p-2"
+                >
+                  Log In
+                </Link>
+                <Link
+                  to="/signup"
+                  className="item mr-8 bg-gradient-to-r from-violet-600 to-pink-500 transition-colors duration-300 rounded-lg p-2"
+                >
+                  Sign up
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       </div>
