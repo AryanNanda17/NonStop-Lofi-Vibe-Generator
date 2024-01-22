@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 const Main = () => {
   return (
     <div className="bg-black h-screen text-white">
-      <Navbar />
-      <h1 className="text-center text-4xl tracking-wider mt-28">
+      <Navbar/>
+      <h1 className="text-center text-4xl tracking-wider p-24">
         Dive into the world of music with these amazing music experiences
       </h1>
 
@@ -16,9 +16,9 @@ const Main = () => {
             <img
               src="./images/bigbang.PNG"
               alt="bigbang"
-              class="w-full h-60 object-cover mb-4 rounded-md"
+              className="w-full h-60 object-cover mb-4 rounded-md"
             />
-            <h1 class="text-center text-3xl">Big Bang</h1>
+            <h1 className="text-center text-3xl">Big Bang</h1>
           </div>
         </Link>
         <Link to="/brain">
@@ -26,9 +26,9 @@ const Main = () => {
             <img
               src="./images/brain.PNG"
               alt="brain"
-              class="w-full h-60 object-cover mb-4 rounded-md"
+              className="w-full h-60 object-cover mb-4 rounded-md"
             />
-            <h1 class="text-center text-3xl">Brain</h1>
+            <h1 className="text-center text-3xl">Brain</h1>
           </div>
         </Link>
         <Link to="/wave" className="">
@@ -36,9 +36,9 @@ const Main = () => {
             <img
               src="./images/wave.PNG"
               alt="brain"
-              class="w-full h-60 object-cover mb-4 rounded-md"
+              className="w-full h-60 object-cover mb-4 rounded-md"
             />
-            <h1 class="text-center text-3xl">Wave</h1>
+            <h1 className="text-center text-3xl">Wave</h1>
           </div>
         </Link>
       </div>

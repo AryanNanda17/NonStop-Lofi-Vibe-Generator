@@ -24,21 +24,22 @@ const Loading = () => {
         {loading < 100 ? (
           <>
             <a-scene>
-              <a-sky src="./images/cyberpunk360.jpg"></a-sky>
-              <a-text
-                value={`Loading ${loading}%`}
-                position="0 2 -5"
-                align="center"
-                width="15"
-                color="#ffffff"
-                font="https://cdn.aframe.io/fonts/Exo2Bold.fnt"
-                shader="msdf"
-                opacity="0.8"
-                wrap-count="15"
-                anchor="center"
-                material="shader: flat; side: double"
-              ></a-text>
-            </a-scene>
+            <a-sky src="./images/cyberpunk360.jpg"></a-sky>
+            <a-text
+              value={`Loading ${loading}%`}
+              position="0 2 -5"
+              align="center"
+              width="10" // Adjust the width for wrapping
+              color="#ffffff"
+              font="https://cdn.aframe.io/fonts/Exo2Bold.fnt"
+              shader="msdf"
+              opacity="0.8"
+              wrap-count="10"
+              anchor="center"
+              material="shader: flat; side: double"
+              letter-spacing="6.8"
+            ></a-text>
+          </a-scene>
           </>
         ) : (
           <LofiLoading />

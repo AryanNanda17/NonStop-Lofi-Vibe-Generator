@@ -1,8 +1,8 @@
 import React from "react";
-import Front from "./Front";
 import FrontCenter from "./FrontCenter";
 import FrontContent from "./FrontContent";
 import Sound from "../Sound/Sound";
+import './front.css'
 
 const FrontPage = () => {
   return (

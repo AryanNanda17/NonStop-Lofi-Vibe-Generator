@@ -71,7 +71,7 @@ const FrontContent = () => {
         <div className="h-screen flex flex-col justify-center items-center relative">
           <div>
             <img
-              src="./images/lofigirl.jpg"
+              src="./images/music5.jpg"
               alt="lofi"
               className="h-full w-screen p-0"
             />
@@ -92,7 +92,7 @@ const FrontContent = () => {
             <img
               src="./images/chill.jpg"
               alt="chill"
-              className="h-full w-screen p-0 mt-96"
+              className="h-full w-screen p-0"
             />
           </div>
           <div className="absolute top-0 left-0 right-0 bottom-0 flex flex-col items-center p-5">
@@ -107,9 +107,9 @@ const FrontContent = () => {
           </div>
         </div>
         <div className="h-screen flex flex-col justify-center items-center relative">
-          <div>
+          <div className="">
             <img
-              src="./images/music5.jpg"
+              src="./images/lofigirl.jpg"
               alt="img-1"
               className="h-full w-screen p-0"
             />
@@ -126,7 +126,7 @@ const FrontContent = () => {
           </div>
         </div>
         <div className="h-screen flex flex-col justify-center items-center relative">
-          <div>
+          <div className="">
             <img
               src="./images/music4.jpg"
               alt="portal"

@@ -5,7 +5,6 @@ import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
 import { AnimatePresence } from "framer-motion";
 import "./App.css";
-import Sound from "./pages/Sound/Sound";
 import FrontPage from "./pages/Front/FrontPage";
 import Profile from "./pages/Profile/Profile";
 import PrivateRoute from "./components/PrivateRoute";
@@ -15,7 +14,6 @@ import Main from "./pages/Experience/Main";
 import BigBang from "./pages/Experience/BigBang";
 import Loading from "./pages/loading/Loading";
 import Wave from "./pages/Experience/Wave";
-import Tunnel from "./pages/loading/Tunnel";
 import MainPage from "./pages/Front/MainPage";
 import Spectrogram from "./pages/Sound/Spectrogram";
 
@@ -38,7 +36,6 @@ const App = () => {
           <Route path="/brain" Component={DigitalBrain} />
           <Route path="/load" Component={Loading} />
           <Route path="/wave" Component={Wave} />
-          <Route path="/tunnel" Component={Tunnel} />
           <Route path="/front" Component={FrontPage} />
         </Routes>
       </AnimatePresence>

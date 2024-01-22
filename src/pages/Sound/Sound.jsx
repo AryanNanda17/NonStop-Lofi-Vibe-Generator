@@ -11,6 +11,7 @@ import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPa
 import { OutputPass } from "three/examples/jsm/postprocessing/OutputPass";
 import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
+import gsap from "gsap";
 
 const Sound = () => {
   const refContainer = useRef(null);
@@ -27,6 +28,18 @@ const Sound = () => {
       setIsPlaying(!isPlaying);
     }
   };
+
+  useEffect(() => {
+    let tl = gsap.timeline();
+    tl.from(".head", {
+      y: 300,
+      stagger: {
+        each: 5,
+      },
+      duration: 2.5,
+      ease: "expo.inOut",
+    });
+  }, []);
 
   useEffect(() => {
     const renderer = new THREE.WebGLRenderer({ antialias: true });
