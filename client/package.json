@@ -1,0 +1,46 @@
+{
+  "name": "lofi",
+  "version": "1.0.0",
+  "description": "ML-supported lo-fi music generator",
+  "author": "Jacob Zhang",
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.prod.js",
+    "serve": "webpack serve --open --config webpack.dev.js"
+  },
+  "dependencies": {
+    "@tonaljs/tonal": "^4.10.0",
+    "@types/pako": "^2.0.0",
+    "@types/sortablejs": "^1.15.0",
+    "@types/wicg-mediasession": "^1.1.4",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.3",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.7.3",
+    "pako": "^2.1.0",
+    "sass": "^1.58.3",
+    "sass-loader": "^13.2.0",
+    "sortablejs": "^1.15.0",
+    "tone": "^14.7.77",
+    "ts-loader": "^9.4.2",
+    "typescript": "^4.9.5",
+    "webpack": "^5.76.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-merge": "^5.8.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.54.1",
+    "@typescript-eslint/parser": "^5.54.1",
+    "eslint": "^8.35.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-plugin-import": "^2.27.5",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 100,
+    "trailingComma": "none"
+  }
+}
