@@ -71,7 +71,7 @@ const FrontContent = () => {
         <div className="h-screen flex flex-col justify-center items-center relative">
           <div>
             <img
-              src="./images/music5.jpg"
+              src="./images/imgg3.webp"
               alt="lofi"
               className="h-full w-screen p-0"
             />
@@ -90,7 +90,7 @@ const FrontContent = () => {
         <div className="h-screen flex flex-col justify-center items-center relative">
           <div>
             <img
-              src="./images/chill.jpg"
+              src="./images/imgg4.avif"
               alt="chill"
               className="h-full w-screen p-0"
             />
@@ -109,7 +109,7 @@ const FrontContent = () => {
         <div className="h-screen flex flex-col justify-center items-center relative">
           <div className="">
             <img
-              src="./images/lofigirl.jpg"
+              src="./images/imgg1.jpg"
               alt="img-1"
               className="h-full w-screen p-0"
             />
@@ -128,7 +128,7 @@ const FrontContent = () => {
         <div className="h-screen flex flex-col justify-center items-center relative">
           <div className="">
             <img
-              src="./images/music4.jpg"
+              src="./images/imgg8.avif"
               alt="portal"
               className="h-full w-screen p-0"
             />
@@ -138,13 +138,13 @@ const FrontContent = () => {
               Dive into the LofiVibe
             </h1>
             <p className="text-2xl mb-3 text-white text-center p-5">
-              LofiVibe is your portal to a realm where technology meets
-              tranquility. Step into a universe where relaxation is an art form
-              and where melodies are woven by algorithms, delivering a unique
-              and serene musical journey.
+              LofiVibe is your portal to a realm where technology meets tranquility.
+              Step into a universe where relaxation is an art form and where melodies
+              are woven by algorithms, delivering a unique and serene musical journey.
             </p>
           </div>
         </div>
+
       </div>
     </div>
   );

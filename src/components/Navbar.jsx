@@ -6,7 +6,6 @@ import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const { currentUser } = useSelector((state) => state.user);
-
   useEffect(() => {
     gsap.from(".logo", {
       x: -30,
@@ -36,13 +35,16 @@ const Navbar = () => {
       },
     });
   }, []);
-
   return (
     <div className="bg-opacity-20 backdrop-filter backdrop-blur-md fixed top-0 left-0 right-0 z-10 navbar">
       <div className="text-white pt-4 pl-6 pb-4 text-2xl flex items-center justify-end">
         <div className="logo ml-10 fixed left-5">
           <Link to="/front">
-            <img src="./images/logo.png" alt="logo" className="max-w-16 max-h-16" />
+            <img
+              src="./images/logo.png"
+              alt="logo"
+              className="max-w-16 max-h-16"
+            />
           </Link>
         </div>
 
@@ -54,7 +56,6 @@ const Navbar = () => {
             ☰
           </button>
         </div>
-
         <div>
           <div className="hidden lg:flex items-center uppercase text-2xl">
             <Link
@@ -76,7 +77,7 @@ const Navbar = () => {
             ) : (
               <div className="hidden lg:flex items-center uppercase text-2xl">
                 <Link
-                  to="/about"
+                  to=""// Add link to about page here. 
                   className="item mr-8 bg-gradient-to-r from-violet-600 to-pink-500 transition-all duration-300 rounded-lg p-2"
                 >
                   About
