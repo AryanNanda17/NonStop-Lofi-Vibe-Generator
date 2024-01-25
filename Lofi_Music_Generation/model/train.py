@@ -7,7 +7,6 @@ from torch.utils.data import DataLoader
 
 from model.constants import *
 
-
 def train(dataset, model, name):
     device = "cuda" if torch.cuda.is_available() else "cpu"
     print(f"Using {device} device")
