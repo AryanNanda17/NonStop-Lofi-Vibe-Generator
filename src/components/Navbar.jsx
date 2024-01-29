@@ -39,7 +39,7 @@ const Navbar = () => {
     <div className="bg-opacity-20 backdrop-filter backdrop-blur-md fixed top-0 left-0 right-0 z-10 navbar">
       <div className="text-white pt-4 pl-6 pb-4 text-2xl flex items-center justify-end">
         <div className="logo ml-10 fixed left-5">
-          <Link to="/front">
+          <Link to="/">
             <img
               src="./images/logo.png"
               alt="logo"
@@ -59,7 +59,7 @@ const Navbar = () => {
         <div>
           <div className="hidden lg:flex items-center uppercase text-2xl">
             <Link
-              to="/front"
+              to="/"
               className="item mr-8 bg-gradient-to-r from-violet-600 to-pink-500 transition-all duration-300 rounded-lg p-2"
             >
               Home
@@ -77,7 +77,7 @@ const Navbar = () => {
             ) : (
               <div className="hidden lg:flex items-center uppercase text-2xl">
                 <Link
-                  to=""// Add link to about page here. 
+                  to="" // Add link to about page here.
                   className="item mr-8 bg-gradient-to-r from-violet-600 to-pink-500 transition-all duration-300 rounded-lg p-2"
                 >
                   About

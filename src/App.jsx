@@ -13,9 +13,8 @@ import DigitalBrain from "./pages/Experience/DigitalBrain";
 import Main from "./pages/Experience/Main";
 import BigBang from "./pages/Experience/BigBang";
 import Loading from "./pages/loading/Loading";
+import Play from "./pages/Sound/PlaySong/Play";
 import Wave from "./pages/Experience/Wave";
-import MainPage from "./pages/Front/MainPage";
-import Spectrogram from "./pages/Sound/Spectrogram";
 
 const App = () => {
   const location = useLocation();
@@ -23,10 +22,8 @@ const App = () => {
     <div>
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
-          <Route index path="/" Component={MainPage} />
           <Route path="/login" Component={Login} />
           <Route path="/signup" Component={Signup} />
-          <Route path="/sound" Component={Spectrogram} />
           <Route path="/experience" Component={Main} />
           <Route path="/bang" Component={BigBang} />
           <Route element={<PrivateRoute />}>
@@ -36,7 +33,8 @@ const App = () => {
           <Route path="/brain" Component={DigitalBrain} />
           <Route path="/load" Component={Loading} />
           <Route path="/wave" Component={Wave} />
-          <Route path="/front" Component={FrontPage} />
+          <Route path="/" Component={FrontPage} />
+          <Route path="/play" Component={Play} />
         </Routes>
       </AnimatePresence>
     </div>

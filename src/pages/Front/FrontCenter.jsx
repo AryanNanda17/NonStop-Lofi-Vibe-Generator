@@ -4,7 +4,7 @@ const FrontCenter = () => {
   return (
     <div className="bg-black p-6">
       <div className="text-white text-center">
-        <h1 className="uppercase text-center text-8xl tracking-wider">
+        <h1 className="uppercase text-center text-8xl tracking-wider mt-56">
           Your Personalised Mood Maestro
         </h1>
       </div>
