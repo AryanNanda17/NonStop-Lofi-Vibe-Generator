@@ -2,6 +2,7 @@ import React from "react";
 import FrontCenter from "./FrontCenter";
 import FrontContent from "./FrontContent";
 import Sound from "../Sound/Sound";
+import Footer from "../../components/Footer";
 import "./front.css";
 
 const FrontPage = () => {
@@ -13,6 +14,9 @@ const FrontPage = () => {
       <div className="flex-grow">
         <FrontCenter />
         <FrontContent />
+        <div className="h-3/5 mt-20">
+          <Footer />
+        </div>
       </div>
     </div>
   );
