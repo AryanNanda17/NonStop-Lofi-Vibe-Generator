@@ -3,7 +3,7 @@ import json
 import torch
 from torch.utils.data import Dataset
 
-from model.dataset import *
+from dataset import *
 
 
 class Lofi2LofiDataset(Dataset):

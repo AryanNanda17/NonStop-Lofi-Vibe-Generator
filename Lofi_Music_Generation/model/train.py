@@ -5,7 +5,7 @@ from torch import nn
 from torch.nn.utils.rnn import pack_padded_sequence
 from torch.utils.data import DataLoader
 
-from model.constants import *
+from constants import *
 
 def train(dataset, model, name):
     device = "cuda" if torch.cuda.is_available() else "cpu"

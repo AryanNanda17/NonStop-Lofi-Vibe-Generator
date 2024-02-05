@@ -1,6 +1,6 @@
 import collections
 
-from model.constants import *
+from constants import *
 
 
 def process_sample(json_file):

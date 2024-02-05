@@ -5,7 +5,7 @@ import torch
 from torch import nn
 from torch.nn.utils.rnn import pack_padded_sequence
 
-from model.constants import *
+from constants import *
 
 
 class Lofi2LofiModel(nn.Module):

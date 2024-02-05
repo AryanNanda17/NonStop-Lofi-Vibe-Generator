@@ -1,11 +1,11 @@
 import os
 
-from model.lofi2lofi_dataset import Lofi2LofiDataset
-from model.lofi2lofi_model import Lofi2LofiModel
-from model.train import train
+from lofi2lofi_dataset import Lofi2LofiDataset
+from lofi2lofi_model import Lofi2LofiModel
+from train import train
 
 if __name__ == '__main__':
-    dataset_folder = "model/dataset/processed"
+    dataset_folder = "processed"
     dataset_files = os.listdir(dataset_folder)
 
     dataset = Lofi2LofiDataset(dataset_folder, dataset_files)
