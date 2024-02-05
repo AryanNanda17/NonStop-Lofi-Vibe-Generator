@@ -1,3 +1,7 @@
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.realpath(__file__)) + "/..")
+
 import json
 import torch
 from flask import Flask, request, jsonify
@@ -9,12 +13,15 @@ from lofi2lofi_generate import decode
 device = "cpu"
 app = Flask(__name__)
 limiter = Limiter(
-    app,
-    key_func=get_remote_address,
-    default_limits=["30 per minute"]
+    get_remote_address,
+    app=app,
+    default_limits=["30 per minute"],
+    storage_uri="redis://localhost:6379",
+    strategy="fixed-window"
 )
 
-lofi2lofi_checkpoint = "checkpoints/lofi2lofi_decoder.pth"
+script_directory = os.path.dirname(os.path.abspath(__file__))
+lofi2lofi_checkpoint = os.path.join(script_directory, "lofi2lofi-decoder.pth")
 print("Loading lofi model...", end=" ")
 lofi2lofi_model = Lofi2LofiDecoder(device=device)
 lofi2lofi_model.load_state_dict(torch.load(lofi2lofi_checkpoint, map_location=device))
@@ -37,3 +44,6 @@ def decode_input():
     response.headers.add('Access-Control-Allow-Origin', '*')
 
     return response
+
+if __name__ == '__main__':
+    app.run(debug=True)
