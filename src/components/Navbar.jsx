@@ -77,10 +77,16 @@ const Navbar = () => {
             ) : (
               <div className="hidden lg:flex items-center uppercase text-2xl">
                 <Link
-                  to="" // Add link to about page here.
+                  to="/about" // Add link to about page here.
                   className="item mr-8 bg-gradient-to-r from-violet-600 to-pink-500 transition-all duration-300 rounded-lg p-2"
                 >
                   About
+                </Link>
+                <Link
+                  to="/contact" // Add link to about page here.
+                  className="item mr-8 bg-gradient-to-r from-violet-600 to-pink-500 transition-all duration-300 rounded-lg p-2"
+                >
+                  Contact
                 </Link>
                 <Link
                   to="/login"
