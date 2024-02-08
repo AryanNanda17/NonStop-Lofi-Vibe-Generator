@@ -41,15 +41,15 @@ Our project is an interactive web application that allows users to generate orig
 
 Key Features:
 
-> Lofi Music Generation:
+1. Lofi Music Generation:
 
 - Users can generate original Lofi music using Variational Autoencoders (VAEs) through a latent space.The generated Lofi music is unique to each user session, providing endless possibilities for exploration and creativity.
 
-> Nonstop Piano Music Playback:
+2. Nonstop Piano Music Playback:
 
 - Users can enjoy nonstop piano music playback generated using Long Short-Term Memory (LSTM) networks.
   
-> Music Experience with Visuals:
+3. Music Experience with Visuals:
 - The music experience page offers users the opportunity to immerse themselves in music accompanied by captivating visuals. The visuals are synchronized with the music, enhancing the overall listening experience. Users can choose from a variety of visual themes and effects to accompany the music, creating a visually stunning and dynamic environment.
 
 
@@ -65,11 +65,11 @@ Add any more links/resources you used for your project
 
 ## 🤖Tech-Stack
 
-
 #### Front-end
 - ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 - ![Tailwind](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white) 
 - ![ThreeJS](https://img.shields.io/badge/ThreeJs-black?style=for-the-badge&logo=three.js&logoColor=white)
+- 
 #### Back-end
 
 - ![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
@@ -113,7 +113,14 @@ List down all the future plans for the project here
 - Entertainment and Enjoyment
 
 ## 🛠Project Setup
-
+#### Steps for installation
+- Install Node.js
+- download git bash
+- clone this repository
+- git clone <url of this repo>
+- open terminal inside this folder
+- type npm install
+- then npm run dev
 
 
 ## 💻Usage
@@ -122,8 +129,6 @@ List down all the future plans for the project here
 
 ## 👨‍💻Team Members
 
-Add names of your team members with their emails and links to their GitHub accounts
-
 - [Param Thakkar](https://github.com/ParamThakkar123): paramthakkar864@gmail.com
 - [Aryan Nanda](https://github.com/AryanNanda17): nandaaryan823@gmail.com
 - [Mohammed](https://github.com/mohammed052): mhdbhadsorawala@gmail.com
@@ -131,14 +136,8 @@ Add names of your team members with their emails and links to their GitHub accou
 
 ## 👨‍🏫Mentors
 
-Add names of your mentors with their emails and links to their GitHub accounts
-
 - [Pranav Janjani]([https://github.com/](https://github.com/pranavjanjani)): janjanipranav@gmail.com
 - [Dhruvil Suthar](https://github.com/Bruhbytes): dtsuthar6@gmail.com
 
 ## 📱Screenshots
-Add a few screenshots for parts of the project completed till now to give the viewer a quick idea of what your project looks like. After all, a picture speaks a thousand words.
 
-You'll have to link the screenshots from your drive folder here.
-
-![Screenshot alt text](https://i.redd.it/qp8ocyzvyj8a1.jpg "Here is a screenshot")
