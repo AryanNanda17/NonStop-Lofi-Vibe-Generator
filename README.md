@@ -34,7 +34,9 @@
 
 </details>
 <hr>
+
 ## 📝Description
+
 
 Our project is an interactive web application that allows users to generate original Lofi music, play nonstop piano music, and experience music with visuals. The application integrates advanced machine learning models to provide a unique and immersive musical experience.
 
@@ -60,7 +62,6 @@ Key Features:
 - [Hosted Website Link]()
 - [Hosted Backend Link]()
 
-Add any more links/resources you used for your project
 
 ## 🤖Tech-Stack
 
@@ -136,7 +137,7 @@ List down all the future plans for the project here
 
 ## 👨‍🏫Mentors
 
-- [Pranav Janjani]([https://github.com/](https://github.com/pranavjanjani)): janjanipranav@gmail.com
+- [Pranav Janjani]([https://github.com/](https://github.com/pranavjanjani): janjanipranav@gmail.com
 - [Dhruvil Suthar](https://github.com/Bruhbytes): dtsuthar6@gmail.com
 
 ## 📱Screenshots
