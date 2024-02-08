@@ -17,6 +17,8 @@ import Play from "./pages/Sound/PlaySong/Play";
 import Wave from "./pages/Experience/Wave";
 import Contact from "./pages/Contact/Contact";
 import Trial from "./pages/Sound/PlaySong/Trial";
+import Developer from "./pages/Developer/Developer";
+import ResSuccess from "./pages/Contact/ResSuccess";
 
 const App = () => {
   const location = useLocation();
@@ -39,6 +41,8 @@ const App = () => {
           <Route path="/play" Component={Play} />
           <Route path="/contact" Component={Contact} />
           <Route path="/trial" Component={Trial} />
+          <Route path="/about" Component={Developer} />
+          <Route path="/ressuccess" Component={ResSuccess} />
         </Routes>
       </AnimatePresence>
     </div>

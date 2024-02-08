@@ -16,7 +16,7 @@ const Profile = () => {
     >
       <Navbar />
       <div>
-        <div className="mt-36">
+        <div className="p-24">
           <h1 className="text-5xl text-center">Profile</h1>
           <div className="flex items-center justify-center">
             <img

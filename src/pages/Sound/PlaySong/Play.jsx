@@ -35,6 +35,12 @@ const Play = () => {
         <LatentSpace />
       </div>
       <div className="absolute bottom-0 right-1/2 transform translate-x-1/2 flex items-center justify-center">
+        <input
+          type="number"
+          name="sequences"
+          id="sequence"
+          placeholder="Enter the number of sequences"
+        />
         <button className="text-white p-4 bg-blue-600 text-xl rounded-md mb-8 ml-56">
           Generate
         </button>

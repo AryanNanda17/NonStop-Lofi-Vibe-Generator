@@ -3,10 +3,25 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
+  const [show, setShow] = useState(false);
+  const [showbutton, setshowbutton] = useState("Show");
   const [formData, setFormData] = useState({});
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const handleShowButton = () => {
+    if (showbutton === "Show" && show === false) {
+      setshowbutton("Hide");
+    } else {
+      setshowbutton("Show");
+    }
+  };
+
+  const handleShow = () => {
+    setShow(!show);
+    handleShowButton();
   };
 
   const [error, setError] = useState(false);
@@ -41,7 +56,7 @@ const Signup = () => {
   };
   return (
     <motion.div
-      className="bg-black h-screen text-white flex items-center justify-center"
+      className="bg-black h-screen text-white flex items-center justify-center overflow-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -81,14 +96,22 @@ const Signup = () => {
           <div className="mt-2 pl-4 pr-4 pb-3">
             <span className="text-2xl">Password</span>
             <br />
-            <div>
+            <div className="flex relative">
               <input
-                type="password"
+                type={show ? "text" : "password"}
                 placeholder="Password"
                 id="password"
-                className="mt-2 w-full bg-black text-white rounded-md p-2 border-solid border-2 border-white text-xl"
+                className="mt-2 w-full bg-black text-white rounded-md p-2 border-solid border-2 border-white text-xl pl-2"
+                autoComplete="false"
                 onChange={handleChange}
               />
+
+              <span
+                onClick={handleShow}
+                className="absolute cursor-pointer right-2 top-2 mt-2 mr-1 flex items-center justify-center text-white font-bold text-xl"
+              >
+                {showbutton}
+              </span>
             </div>
             <br />
           </div>

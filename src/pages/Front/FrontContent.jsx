@@ -27,7 +27,7 @@ const FrontContent = () => {
       scrollTrigger: {
         trigger: container.current,
         start: "top",
-        end: `+=${container.current.offsetHeight}`,
+        end: `+=${container.current.offsetHeight - 190}`,
         scrub: true,
       },
     });
@@ -36,7 +36,14 @@ const FrontContent = () => {
     let body = [];
     phrase1.split(" ").map((word, index) => {
       const letters = splitLetters(word);
-      body.push(<p key={`word_${index}`}>{letters}</p>);
+      body.push(
+        <p
+          className="bg-gradient-to-r from-pink-600 to-blue-600 inline-block text-transparent bg-clip-text"
+          key={`word_${index}`}
+        >
+          {letters}
+        </p>
+      );
     });
     return body;
   };
@@ -73,6 +80,7 @@ const FrontContent = () => {
             <img
               src="./images/imgg3.webp"
               alt="lofi"
+              loading="lazy"
               className="h-full w-screen p-0"
             />
           </div>
@@ -80,7 +88,7 @@ const FrontContent = () => {
             <h1 className="text-6xl heading p-5 bg-gradient-to-r from-pink-600 to-blue-600 inline-block text-transparent bg-clip-text text-center">
               Soulful Lofi Beats
             </h1>
-            <p className="text-2xl text-white p-5">
+            <p className="text-2xl text-white p-5 opacity-70">
               Immerse yourself in an ever-expanding collection of mesmerizing
               Lofi tracks meticulously crafted by our AI models. Let the gentle
               rhythms and mellow tunes set the perfect ambiance for relaxation.
@@ -92,6 +100,7 @@ const FrontContent = () => {
             <img
               src="./images/imgg4.avif"
               alt="chill"
+              loading="lazy"
               className="h-full w-screen p-0"
             />
           </div>
@@ -99,7 +108,7 @@ const FrontContent = () => {
             <h1 className="text-5xl heading bg-gradient-to-r p-5 from-pink-600 to-blue-600 inline-block text-transparent bg-clip-text">
               Infinite Chill Vibes
             </h1>
-            <p className="text-2xl text-white p-5">
+            <p className="text-2xl text-white p-5 opacity-70">
               Explore an endless stream of chill-out music that adapts to your
               mood and setting. Whether you're studying, working, or unwinding,
               LofiVibe delivers the perfect soundtrack for every moment.
@@ -111,6 +120,7 @@ const FrontContent = () => {
             <img
               src="./images/imgg1.jpg"
               alt="img-1"
+              loading="lazy"
               className="h-full w-screen p-0"
             />
           </div>
@@ -118,7 +128,7 @@ const FrontContent = () => {
             <h1 className="text-6xl heading p-5 bg-gradient-to-r from-pink-600 to-blue-600 inline-block text-transparent bg-clip-text">
               Personalized Playlists
             </h1>
-            <p className="text-2xl mb-3 text-white text-center p-5">
+            <p className="text-2xl mb-3 text-white text-center p-5 opacity-70">
               Tailor your listening experience. Curate playlists that resonate
               with your preferences, discovering new AI-generated tracks that
               match your unique taste in Lofi music.
@@ -130,6 +140,7 @@ const FrontContent = () => {
             <img
               src="./images/imgg8.avif"
               alt="portal"
+              loading="lazy"
               className="h-full w-screen p-0"
             />
           </div>
@@ -137,14 +148,14 @@ const FrontContent = () => {
             <h1 className="text-6xl heading bg-gradient-to-r p-5 from-pink-600 to-blue-600 inline-block text-transparent bg-clip-text text-center">
               Dive into the LofiVibe
             </h1>
-            <p className="text-2xl mb-3 text-white text-center p-5">
-              LofiVibe is your portal to a realm where technology meets tranquility.
-              Step into a universe where relaxation is an art form and where melodies
-              are woven by algorithms, delivering a unique and serene musical journey.
+            <p className="text-2xl mb-3 text-white text-center p-5 opacity-70">
+              LofiVibe is your portal to a realm where technology meets
+              tranquility. Step into a universe where relaxation is an art form
+              and where melodies are woven by algorithms, delivering a unique
+              and serene musical journey.
             </p>
           </div>
         </div>
-
       </div>
     </div>
   );
