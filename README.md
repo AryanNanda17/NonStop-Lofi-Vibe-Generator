@@ -2,18 +2,17 @@
   <a href="https://github.com/CommunityOfCoders/Inheritance-2023">
     <img src="./Assets/Inheritance.png" alt="CoC Inheritance 2023" width="500" height="166">
   </a>
-  <br>
   
 </h1>
 <p>
-<h1 align = "center" > <strong>NonStop Lofi Vibe Generator</strong> <br></h1>
+<h1 align = "center"> <strong>NonStop Lofi Vibe Generator</strong></h1>
 
 <h3 align = "center">
 
 </p>
  :notes: Generating original Lofi-Music :notes:
 
-[COC](https://github.com/CommunityOfCoders/Inheritance-2023) Inheritance 2023<br></h3>
+[COC](https://github.com/CommunityOfCoders/Inheritance-2023) Inheritance 2023</h3>
 
 </div>
 <hr>
@@ -34,7 +33,7 @@
 - [Screenshots](#screenshots)
 
 </details>
-
+<hr>
 ## 📝Description
 
 Our project is an interactive web application that allows users to generate original Lofi music, play nonstop piano music, and experience music with visuals. The application integrates advanced machine learning models to provide a unique and immersive musical experience.
