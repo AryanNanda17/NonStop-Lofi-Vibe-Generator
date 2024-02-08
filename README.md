@@ -137,7 +137,7 @@ List down all the future plans for the project here
 
 ## 👨‍🏫Mentors
 
-- [Pranav Janjani]([https://github.com/](https://github.com/pranavjanjani): janjanipranav@gmail.com
+- [Pranav Janjani](https://github.com/pranavjanjani): janjanipranav@gmail.com
 - [Dhruvil Suthar](https://github.com/Bruhbytes): dtsuthar6@gmail.com
 
 ## 📱Screenshots
