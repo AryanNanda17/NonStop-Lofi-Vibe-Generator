@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../../components/Navbar";
 import { Link } from "react-router-dom";
 import Layout from "../Layout/Layout";
 
@@ -15,7 +14,7 @@ const Main = () => {
           <Link to="/bang">
             <div className="">
               <img
-                src="./images/bigbang.png"
+                src="./images/bigbang.PNG"
                 alt="bigbang"
                 className="w-full h-60 object-cover mb-4 rounded-md"
               />
@@ -25,7 +24,7 @@ const Main = () => {
           <Link to="/brain">
             <div className="">
               <img
-                src="./images/brain.png"
+                src="./images/brain.PNG"
                 alt="brain"
                 className="w-full h-60 object-cover mb-4 rounded-md"
               />
@@ -35,7 +34,7 @@ const Main = () => {
           <Link to="/wave" className="">
             <div className="">
               <img
-                src="./images/wave.png"
+                src="./images/wave.PNG"
                 alt="brain"
                 className="w-full h-60 object-cover mb-4 rounded-md"
               />
