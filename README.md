@@ -130,7 +130,7 @@ List down all the future plans for the project here
 Add names of your team members with their emails and links to their GitHub accounts
 
 - [Param Thakkar](https://github.com/ParamThakkar123): paramthakkar864@gmail.com
-- [Aryan Nanda(https://github.com/AryanNanda17): nandaaryan823@gmail.com
+- [Aryan Nanda](https://github.com/AryanNanda17): nandaaryan823@gmail.com
 - [Mohammed](https://github.com/mohammed052): mhdbhadsorawala@gmail.com
 - [Kamakshi](https://github.com/Kamakshi8104): kamakshiramamurthy8104@gmail.com
 
