@@ -142,4 +142,9 @@ List down all the future plans for the project here
 - [Dhruvil Suthar](https://github.com/Bruhbytes): dtsuthar6@gmail.com
 
 ## 📱Screenshots
+![image](https://github.com/AryanNanda17/NonStop-Lofi-Vibe-Generator/assets/128291516/0be37bd1-5575-49c3-8dda-e1878b1a9a73)
+![image](https://github.com/AryanNanda17/NonStop-Lofi-Vibe-Generator/assets/128291516/dfba4874-2f88-48dd-aae3-259537dd7546)
+![image](https://github.com/AryanNanda17/NonStop-Lofi-Vibe-Generator/assets/128291516/02639c70-5691-4256-a4ee-c2037874edc5)
+![image](https://github.com/AryanNanda17/NonStop-Lofi-Vibe-Generator/assets/128291516/e96332ee-dd8b-46c9-ae6d-b369d127b6f1)
+
 
