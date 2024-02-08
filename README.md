@@ -59,7 +59,6 @@ Key Features:
 - [Demo Video]()
 - [Drive Link to Screenshots of your project]()
 - [Hosted Website Link]()
-- [App APK Link]()
 - [Hosted Backend Link]()
 
 Add any more links/resources you used for your project
@@ -135,7 +134,7 @@ Add names of your team members with their emails and links to their GitHub accou
 Add names of your mentors with their emails and links to their GitHub accounts
 
 - [Pranav Janjani]([https://github.com/](https://github.com/pranavjanjani)): janjanipranav@gmail.com
-- [Dhruvil](https://github.com/Bruhbytes): dtsuthar6@gmail.com
+- [Dhruvil Suthar](https://github.com/Bruhbytes): dtsuthar6@gmail.com
 
 ## 📱Screenshots
 Add a few screenshots for parts of the project completed till now to give the viewer a quick idea of what your project looks like. After all, a picture speaks a thousand words.
