@@ -147,4 +147,5 @@ List down all the future plans for the project here
 ![image](https://github.com/AryanNanda17/NonStop-Lofi-Vibe-Generator/assets/128291516/02639c70-5691-4256-a4ee-c2037874edc5)
 ![image](https://github.com/AryanNanda17/NonStop-Lofi-Vibe-Generator/assets/128291516/e96332ee-dd8b-46c9-ae6d-b369d127b6f1)
 
+![image](https://github.com/AryanNanda17/NonStop-Lofi-Vibe-Generator/assets/128291516/b1b20d0c-aa5c-4a07-b582-49781033ef0c)
 
