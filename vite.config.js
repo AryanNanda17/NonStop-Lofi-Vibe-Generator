@@ -11,6 +11,10 @@ export default defineConfig({
       '/api': {
         target: 'http://localhost:3000',
         secure: false,
+      },
+      '/fastapi': {
+        target: 'http://localhost:8000',
+        secure: false,
       }
     }
   },
