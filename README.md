@@ -141,6 +141,17 @@ List down all the future plans for the project here
 - [Pranav Janjani](https://github.com/pranavjanjani): janjanipranav@gmail.com
 - [Dhruvil Suthar](https://github.com/Bruhbytes): dtsuthar6@gmail.com
 
+## Contributing
+Contributions are what makes the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
 ## 📱Screenshots
 ![image](https://github.com/AryanNanda17/NonStop-Lofi-Vibe-Generator/assets/128291516/0be37bd1-5575-49c3-8dda-e1878b1a9a73)
 ![image](https://github.com/AryanNanda17/NonStop-Lofi-Vibe-Generator/assets/128291516/dfba4874-2f88-48dd-aae3-259537dd7546)
