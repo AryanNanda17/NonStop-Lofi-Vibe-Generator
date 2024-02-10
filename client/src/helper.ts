@@ -64,7 +64,6 @@ export const addTime = (time1: Time, time2: Time) => {
 
 /** Substracts one Tone.js Time objects to another */
 export const subtractTime = (time1: Time, time2: Time) => {
-
   const time = Tone.Time(time1).toSeconds() - Tone.Time(time2).toSeconds();
   return Tone.Time(time).toBarsBeatsSixteenths();
 };
@@ -82,111 +81,7 @@ export const randn = () => {
   while (u === 0) u = Math.random(); // Converting [0,1) to (0,1)
   while (v === 0) v = Math.random();
   return Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
-
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /** Returns a quasi-random number between min-max based on given seed number */
 export const randomFromInterval = (min: number, max: number, seed?: number) => {
@@ -213,5 +108,3 @@ export const decompress = (input: string) =>
     Uint8Array.from(atob(input), (c) => c.charCodeAt(0)),
     { to: 'string' }
   );
-
-  

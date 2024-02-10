@@ -300,7 +300,6 @@ Sortable.create(playlistContainer, {
 });
 updatePlaylistDisplay();
 
-// Player controls
 const playButton = document.getElementById('play-button');
 const playPreviousButton = document.getElementById('play-previous-button');
 const playNextButton = document.getElementById('play-next-button');
@@ -324,7 +323,7 @@ player.onPlayingStateChange = updatePlayingState;
 player.onLoadingStateChange = updateTrackClasses;
 playButton.addEventListener('click', async () => {
   if (player.playlist.length === 0) return;
-  
+
   if (player.isPlaying) {
     player.pause();
   } else {
