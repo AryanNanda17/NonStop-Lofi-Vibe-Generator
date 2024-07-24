@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../node_modules/redux-persist/es/constants.js"],
+  "sourcesContent": ["export var KEY_PREFIX = 'persist:';\nexport var FLUSH = 'persist/FLUSH';\nexport var REHYDRATE = 'persist/REHYDRATE';\nexport var PAUSE = 'persist/PAUSE';\nexport var PERSIST = 'persist/PERSIST';\nexport var PURGE = 'persist/PURGE';\nexport var REGISTER = 'persist/REGISTER';\nexport var DEFAULT_VERSION = -1;"],
+  "mappings": ";AAAO,IAAI,aAAa;AACjB,IAAI,QAAQ;AACZ,IAAI,YAAY;AAChB,IAAI,QAAQ;AACZ,IAAI,UAAU;AACd,IAAI,QAAQ;AACZ,IAAI,WAAW;AACf,IAAI,kBAAkB;",
+  "names": []
+}
