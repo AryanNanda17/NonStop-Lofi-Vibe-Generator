@@ -74,12 +74,12 @@ const Navbar = () => {
               </div>
             ) : (
               <div className="hidden lg:flex items-center uppercase text-2xl">
-                <Link
+                {/* <Link
                   to="/research"
                   className="item mr-8 bg-gradient-to-r from-violet-600 to-pink-500 transition-all duration-300 rounded-lg p-2"
                 >
                   Research
-                </Link>
+                </Link> */}
                 <Link
                   to="/contact"
                   className="item mr-8 bg-gradient-to-r from-violet-600 to-pink-500 transition-all duration-300 rounded-lg p-2"
