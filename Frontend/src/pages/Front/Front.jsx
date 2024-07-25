@@ -42,7 +42,7 @@ const Front = () => {
               </Link>
             </button>
             <button className="p-2 lg:p-4 rounded-md bg-gradient-to-r from-violet-600 to-pink-500 transition-all duration-300 mt-3 lg:mt-0">
-              <Link to="/play" className="text-lg lg:text-2xl">
+              <Link to="https://lofi.jacobzhang.de/" className="text-lg lg:text-2xl">
                 AI Generated Music
               </Link>
             </button>
@@ -59,6 +59,7 @@ const Front = () => {
               </button>
             </div>
           </div>
+        </div>
         </div>
       </Layout>
     </motion.div>
