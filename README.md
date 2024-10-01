@@ -1,9 +1,4 @@
-<h1 align="center">
-  <a href="https://github.com/CommunityOfCoders/Inheritance-2023">
-    <img src="./Assets/Inheritance.png" alt="CoC Inheritance 2023" width="500" height="166">
-  </a>
-  
-</h1>
+<a href=""><img src="./public/images/logo.png" width="100" align="right" /></a>
 <p>
 <h1 align = "center"> <strong>NonStop Lofi Vibe Generator</strong></h1>
 
