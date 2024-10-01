@@ -1,4 +1,4 @@
-<a href=""><img src="./public/images/logo.png" width="100" align="right" /></a>
+<a href=""><img src="./public/images/logo.png" width="80" align="right" /></a>
 <p>
 <h1 align = "center"> <strong>NonStop Lofi Vibe Generator</strong></h1>
 
