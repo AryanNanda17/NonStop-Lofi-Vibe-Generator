@@ -1,4 +1,4 @@
-<a href="/"><img src="./public/images/logo.png" width="80" align="right" /></a>
+<a href="https://github.com/AryanNanda17/NonStop-Lofi-Vibe-Generator"><img src="./public/images/logo.png" width="80" align="right" /></a>
 <p>
 <h1 align = "center"> <strong>NonStop Lofi Vibe Generator</strong></h1>
 
@@ -26,6 +26,7 @@
 - [Team Members](#team-members)
 - [Mentors](#mentors)
 - [Screenshots](#screenshots)
+- [Contributor's Guidelines](#how-to-contribute?)
 
 </details>
 <hr>
