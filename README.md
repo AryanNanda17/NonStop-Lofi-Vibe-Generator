@@ -26,7 +26,7 @@
 - [Team Members](#team-members)
 - [Mentors](#mentors)
 - [Screenshots](#screenshots)
-- [Contributor's Guidelines](#how-to-contribute?)
+- [Contributor's Guidelines](#how-to-contribute)
 
 </details>
 <hr>
