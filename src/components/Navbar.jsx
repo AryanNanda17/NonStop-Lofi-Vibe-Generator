@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./navbar.css";
 import gsap from "gsap";
 import { useSelector } from "react-redux";
@@ -8,7 +8,9 @@ const Navbar = () => {
   const { currentUser } = useSelector((state) => state.user);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
-
+  
+  let location = useLocation();
+  
   useEffect(() => {
     // Check if the window width is larger than a certain breakpoint (e.g., 1024px)
     const handleResize = () => {
@@ -31,17 +33,30 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+
   return (
     <div className="bg-opacity-20 backdrop-filter backdrop-blur-md fixed top-0 left-0 right-0 z-10 navbar">
       <div className="text-white pt-4 pl-6 pb-4 text-2xl flex items-center justify-between lg:justify-between">
         <div className="logo ml-10 lg:ml-0">
-          <a href="/">
+         {location.pathname === "/" ? <button onClick={scrollToTop}>
             <img
               src="./images/logo.png"
               alt="logo"
               className="max-w-16 max-h-16"
             />
-          </a>
+          </button> :  <Link to="/">
+            <img
+              src="./images/logo.png"
+              alt="logo"
+              className="max-w-16 max-h-16"
+            />
+          </Link> }
         </div>
 
         <div className="lg:hidden">
