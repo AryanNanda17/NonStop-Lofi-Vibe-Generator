@@ -139,7 +139,8 @@ List down all the future plans for the project here
 
 
 ## 📱Screenshots
-![image](https://github.com/AryanNanda17/NonStop-Lofi-Vibe-Generator/assets/128291516/0be37bd1-5575-49c3-8dda-e1878b1a9a73)
+<img width="1440" alt="Screenshot 2024-10-03 at 7 55 55 AM" src="https://github.com/user-attachments/assets/e46e9c06-459e-46f4-aba6-74e6ac6bdd61">
+
 ![image](https://github.com/AryanNanda17/NonStop-Lofi-Vibe-Generator/assets/128291516/dfba4874-2f88-48dd-aae3-259537dd7546)
 ![image](https://github.com/AryanNanda17/NonStop-Lofi-Vibe-Generator/assets/128291516/02639c70-5691-4256-a4ee-c2037874edc5)
 ![image](https://github.com/AryanNanda17/NonStop-Lofi-Vibe-Generator/assets/128291516/e96332ee-dd8b-46c9-ae6d-b369d127b6f1)
