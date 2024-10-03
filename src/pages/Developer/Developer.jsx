@@ -37,16 +37,14 @@ const Developer = () => {
                             </p>
                         </li>
                         <li className="mt-3">
-                            Music Experience with Visuals
+                            Music Visualization:
                             <p className="text-lg mt-1">
-                                The music experience page offers users the
-                                opportunity to immerse themselves in music
-                                accompanied by captivating visuals. The visuals
-                                are synchronized with the music, enhancing the
-                                overall listening experience. Users can choose
-                                from a variety of visual themes and effects to
-                                accompany the music, creating a visually
-                                stunning and dynamic environment.
+                                The music visualization feature uses audio
+                                analysis and visualization techniques to create
+                                captivating visuals that accompany the music.
+                                The visuals are synchronized with the music to
+                                enhance the listening experience and create a
+                                dynamic and immersive environment for users.
                             </p>
                         </li>
                     </ul>
@@ -76,17 +74,6 @@ const Developer = () => {
                                 model generates music sequences based on the
                                 learned patterns, allowing for the creation of
                                 new and original music.
-                            </p>
-                        </li>
-                        <li className="mt-3">
-                            Music Visualization:
-                            <p className="text-lg mt-1">
-                                The music visualization feature uses audio
-                                analysis and visualization techniques to create
-                                captivating visuals that accompany the music.
-                                The visuals are synchronized with the music to
-                                enhance the listening experience and create a
-                                dynamic and immersive environment for users.
                             </p>
                         </li>
                     </ul>
