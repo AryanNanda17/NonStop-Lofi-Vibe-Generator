@@ -35,13 +35,13 @@ const Navbar = () => {
     <div className="bg-opacity-20 backdrop-filter backdrop-blur-md fixed top-0 left-0 right-0 z-10 navbar">
       <div className="text-white pt-4 pl-6 pb-4 text-2xl flex items-center justify-between lg:justify-between">
         <div className="logo ml-10 lg:ml-0">
-          <Link to="/">
+          <a href="/">
             <img
               src="./images/logo.png"
               alt="logo"
               className="max-w-16 max-h-16"
             />
-          </Link>
+          </a>
         </div>
 
         <div className="lg:hidden">
