@@ -16,7 +16,7 @@ const Navbar = () => {
         const handleResize = () => {
             setIsDesktop(window.innerWidth > 1024);
 
-            if (window.innerWidth < 1024) {
+            if (window.innerWidth > 1024) {
                 setIsMenuOpen(false);
             }
         };
@@ -50,13 +50,13 @@ const Navbar = () => {
             <div className={menuConfig}>
                 <Link
                     to="/"
-                    className="item mr-8 bg-gradient-to-r from-violet-600 to-pink-500 transition-all duration-300 rounded-lg p-2"
+                    className="item lg:mr-8 bg-gradient-to-r from-violet-600 to-pink-500 transition-all duration-300 rounded-lg p-2"
                 >
                     Home
                 </Link>
                 <Link
                     to="/about"
-                    className="item mr-8 bg-gradient-to-r from-violet-600 to-pink-500 transition-all duration-300 rounded-lg p-2"
+                    className="item lg:mr-8 bg-gradient-to-r from-violet-600 to-pink-500 transition-all duration-300 rounded-lg p-2"
                 >
                     About
                 </Link>
@@ -72,7 +72,7 @@ const Navbar = () => {
                         <Link to="/compose">Compose Music</Link>
                     </div>
                 ) : (
-                    <div className="flex flex-col gap-4 text-xl lg:flex lg:flex-row items-center uppercase lg:text-2xl">
+                    <div className="flex flex-col gap-4 lg:gap-0 text-xl lg:flex lg:flex-row items-center uppercase lg:text-2xl">
                         {/* <Link
                   to="/research"
                   className="item mr-8 bg-gradient-to-r from-violet-600 to-pink-500 transition-all duration-300 rounded-lg p-2"
@@ -81,19 +81,19 @@ const Navbar = () => {
                 </Link> */}
                         <Link
                             to="/contact"
-                            className="item mr-8 bg-gradient-to-r from-violet-600 to-pink-500 transition-all duration-300 rounded-lg p-2"
+                            className="item lg:mr-8 bg-gradient-to-r from-violet-600 to-pink-500 transition-all duration-300 rounded-lg p-2"
                         >
                             Contact
                         </Link>
                         <Link
                             to="/login"
-                            className="item mr-8 bg-gradient-to-r from-violet-600 to-pink-500 transition-all duration-300 rounded-lg p-2"
+                            className="item lg:mr-8 bg-gradient-to-r from-violet-600 to-pink-500 transition-all duration-300 rounded-lg p-2"
                         >
                             Log In
                         </Link>
                         <Link
                             to="/signup"
-                            className="item mr-8 bg-gradient-to-r from-violet-600 to-pink-500 transition-colors duration-300 rounded-lg p-2"
+                            className="item lg:mr-8 bg-gradient-to-r from-violet-600 to-pink-500 transition-colors duration-300 rounded-lg p-2"
                         >
                             Sign up
                         </Link>
