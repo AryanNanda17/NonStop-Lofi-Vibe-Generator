@@ -61,15 +61,20 @@ const Navbar = () => {
                     About
                 </Link>
                 {currentUser ? (
-                    <div className="flex flex-col gap-4 text-xl lg:flex items-center uppercase lg:text-2xl mr-5">
+                    <div className="flex flex-col gap-4 text-xl lg:flex lg:flex-row items-center uppercase lg:text-2xl lg:mr-5">
                         <Link to="/profile">
                             <img
                                 src={currentUser.profilePicture}
                                 alt="profile"
-                                className="item h-10 w-10 mr-4 rounded-full object-cover"
+                                className="item h-10 w-10 lg:mr-4 rounded-full object-cover"
                             />
                         </Link>
-                        <Link to="/compose">Compose Music</Link>
+                        <Link
+                            className="item lg:mr-8 bg-gradient-to-r from-violet-600 to-pink-500 transition-all duration-300 rounded-lg p-2"
+                            to="/compose"
+                        >
+                            Compose Music
+                        </Link>
                     </div>
                 ) : (
                     <div className="flex flex-col gap-4 lg:gap-0 text-xl lg:flex lg:flex-row items-center uppercase lg:text-2xl">
