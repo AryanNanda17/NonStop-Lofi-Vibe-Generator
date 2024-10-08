@@ -1,4 +1,4 @@
-import React, { useMemo, useRef } from "react";
+import React, { useMemo, useRef, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useTexture } from "@react-three/drei";
 import * as THREE from "three";
@@ -104,38 +104,37 @@ void main() {
 
 const Scene = () => {
   const meshRef = useRef();
-
   const noiseTexture = useTexture("/images/noise2.png");
 
-  useFrame((state) => {
-    let time = state.clock.getElapsedTime();
-    meshRef.current.material.uniforms.iTime.value = time + 20;
+  // Move uniform creation outside of the component
+  const uniforms = useRef({
+    iTime: { type: "f", value: 1.0 },
+    iResolution: { type: "v2", value: new THREE.Vector2() },
+    iChannel0: { type: "t", value: null },
   });
 
-  // Define the shader uniforms with memoization to optimize performance
-  const uniforms = useMemo(
-    () => ({
-      iTime: {
-        type: "f",
-        value: 1.0,
-      },
-      iResolution: {
-        type: "v2",
-        value: new THREE.Vector2(window.innerWidth, window.innerHeight),
-      },
-      iChannel0: {
-        type: "t",
-        value: noiseTexture,
-      },
-    }),
-    []
-  );
+  useEffect(() => {
+    const handleResize = () => {
+      uniforms.current.iResolution.value.set(window.innerWidth, window.innerHeight);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    uniforms.current.iChannel0.value = noiseTexture;
+  }, [noiseTexture]);
+
+  useFrame((state) => {
+    uniforms.current.iTime.value = state.clock.getElapsedTime() + 20;
+  });
 
   return (
     <mesh ref={meshRef}>
       <planeGeometry args={[18, 12]} />
       <shaderMaterial
-        uniforms={uniforms}
+        uniforms={uniforms.current}
         vertexShader={vertexShader}
         fragmentShader={fragmentShader}
         side={THREE.DoubleSide}
@@ -145,23 +144,16 @@ const Scene = () => {
 };
 
 const DigitalBrain = () => {
-  const canvasStyle = {
-    width: "100vw",
-    height: "100vh",
-    position: "fixed",
-    top: 0,
-    left: 0,
-  };
   return (
     <>
-    <audio controls={false} loop autoPlay>
-      <source src="./music2.mp3" type="audio/mpeg" />
-      Your browser does not support the audio element.
-    </audio>
-    <Canvas style={{ width: "100vw", height: "100vh" }}>
-      <Scene />
-    </Canvas>
-  </>
+      <audio controls={false} loop autoPlay>
+        <source src="./music2.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+      <Canvas style={{ width: "100vw", height: "100vh" }}>
+        <Scene />
+      </Canvas>
+    </>
   );
 };
 
