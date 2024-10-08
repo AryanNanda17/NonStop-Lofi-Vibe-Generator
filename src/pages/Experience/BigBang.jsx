@@ -1,5 +1,5 @@
-import React, { useMemo, useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import React, { useMemo, useRef, useCallback } from "react";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 import { useTexture } from "@react-three/drei";
 
@@ -39,35 +39,32 @@ void main() {
 `;
 
 const Scene = () => {
-  const meshref = useRef();
+  const meshRef = useRef();
+  const { size } = useThree();
+
+  const updateUniforms = useCallback((time) => {
+    if (meshRef.current) {
+      meshRef.current.material.uniforms.iTime.value = time + 20;
+    }
+  }, []);
 
   useFrame((state) => {
-    let time = state.clock.getElapsedTime();
-    meshref.current.material.uniforms.iTime.value = time + 20;
+    updateUniforms(state.clock.getElapsedTime());
   });
 
   const noiseTexture = useTexture("/images/download.png");
 
   const uniforms = useMemo(
     () => ({
-      iTime: {
-        type: "f",
-        value: 1.0,
-      },
-      iResolution: {
-        type: "v2",
-        value: new THREE.Vector2(window.innerWidth, window.innerHeight),
-      },
-      iChannel0: {
-        type: "t",
-        value: noiseTexture,
-      },
+      iTime: { value: 1.0 },
+      iResolution: { value: new THREE.Vector2(size.width, size.height) },
+      iChannel0: { value: noiseTexture },
     }),
-    []
+    [size, noiseTexture]
   );
 
   return (
-    <mesh ref={meshref}>
+    <mesh ref={meshRef}>
       <planeGeometry args={[18, 12]} />
       <shaderMaterial
         uniforms={uniforms}
@@ -82,11 +79,11 @@ const Scene = () => {
 const BigBang = () => {
   return (
     <>
-      <audio controls={false} loop autoPlay>
+      <audio loop autoPlay>
         <source src="./music1.mp3" type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
-      <Canvas style={{ width: "100vw", height: "100vh" }}>
+      <Canvas>
         <Scene />
       </Canvas>
     </>

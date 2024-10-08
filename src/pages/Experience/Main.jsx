@@ -1,50 +1,29 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { memo } from "react";
 import Layout from "../Layout/Layout";
+import ExperienceCard from "./ExperienceCard";
 
-const Main = () => {
+const experiences = [
+  { to: "/bang", image: "./images/bigbang.PNG", alt: "bigbang", title: "Big Bang" },
+  { to: "/brain", image: "./images/brain.PNG", alt: "brain", title: "Brain" },
+  { to: "/wave", image: "./images/wave.PNG", alt: "wave", title: "Wave" },
+];
+
+const Main = memo(() => {
   return (
-    <div className="bg-black h-screen text-white">
+    <div className="bg-black min-h-screen text-white">
       <Layout>
         <h1 className="text-center text-4xl tracking-wider p-24">
           Dive into the world of music with these amazing music experiences
         </h1>
 
         <div className="grid p-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 mx-auto max-w-screen-xl">
-          <Link to="/bang">
-            <div className="">
-              <img
-                src="./images/bigbang.PNG"
-                alt="bigbang"
-                className="w-full h-60 object-cover mb-4 rounded-md"
-              />
-              <h1 className="text-center text-3xl">Big Bang</h1>
-            </div>
-          </Link>
-          <Link to="/brain">
-            <div className="">
-              <img
-                src="./images/brain.PNG"
-                alt="brain"
-                className="w-full h-60 object-cover mb-4 rounded-md"
-              />
-              <h1 className="text-center text-3xl">Brain</h1>
-            </div>
-          </Link>
-          <Link to="/wave" className="">
-            <div className="">
-              <img
-                src="./images/wave.PNG"
-                alt="brain"
-                className="w-full h-60 object-cover mb-4 rounded-md"
-              />
-              <h1 className="text-center text-3xl">Wave</h1>
-            </div>
-          </Link>
+          {experiences.map((experience) => (
+            <ExperienceCard key={experience.to} {...experience} />
+          ))}
         </div>
       </Layout>
     </div>
   );
-};
+});
 
 export default Main;
