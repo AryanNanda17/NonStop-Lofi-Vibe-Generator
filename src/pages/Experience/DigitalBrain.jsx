@@ -150,7 +150,7 @@ const DigitalBrain = () => {
         <source src="./music2.mp3" type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
-      <Canvas>
+      <Canvas style={{ width: "100vw", height: "100vh" }}>
         <Scene />
       </Canvas>
     </>
