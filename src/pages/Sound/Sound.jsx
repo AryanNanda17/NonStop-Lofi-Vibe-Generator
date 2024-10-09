@@ -321,7 +321,7 @@ const Sound = () => {
                 Music Experience
               </Link>
             </button>
-            <br class="lg:hidden" />
+            <br className="lg:hidden" />
             <button className="p-2 lg:p-4 rounded-md bg-gradient-to-r from-violet-600 to-pink-500 transition-all duration-300">
               <Link to="https://lofivibe-oaptuqixw-aryannanda17s-projects.vercel.app/">
                 AI Generated Music
