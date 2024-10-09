@@ -1,36 +1,36 @@
 import React from "react";
-import './footer.css';
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const GIT_URL = "https://github.com/AryanNanda17/NonStop-Lofi-Vibe-Generator";
   return (
-    <div className="bg-black">
-      <footer className="footer">
-        <div className="button-container">
-          <a title="About Us" href="/about">About Us</a>
-          <span className="delimeter">|</span>
-          <a title="Feedback" href="/contact">Feedback</a>
-          <span className="delimeter">|</span>
-          <a title="Terms of Use" target="_blank" href={GIT_URL}>Terms of Use</a>
-          <span className="delimeter">|</span>
-          <a title="Privacy Policy" target="_blank" href={GIT_URL}>Privacy Policy</a>
+    <div className="text-white bg-black p-2 md:p-4 lg:p-6">
+      <div className="flex items-center justify-between">
+        <div className="text-center md:text-left flex text-lg">
+          <Link to="/about">About</Link>
+          <span className="flex items-center pl-2 pr-2">|</span>
+          <Link to="/contact">Feedback</Link>
+          <span className="flex items-center pl-2 pr-2">|</span>
+          <Link target="_blank" to={GIT_URL}>Terms of Use</Link>
+          <span className="flex items-center pl-2 pr-2">|</span>
+          <Link target="_blank" to={GIT_URL}>Privacy Policy</Link>
         </div>
-        <div className="social-links">
-          <a href={GIT_URL} target="_blank" rel="noopener noreferrer" className="link">
+        <div className="flex">
+          <Link to={GIT_URL} target="_blank" className="bg-white mr-1 ml-1 rounded-full p-2">
             <img src="./icons/icons8-facebook.svg" alt="Facebook" />
-          </a>
-          <a href={GIT_URL} target="_blank" rel="noopener noreferrer" className="link">
+          </Link>
+          <Link to={GIT_URL} target="_blank" className="bg-white mr-1 ml-1 rounded-full p-2">
             <img src="./icons/icons8-twitter.svg" alt="Twitter" />
-          </a>
-          <a href={GIT_URL} target="_blank" rel="noopener noreferrer" className="link">
+          </Link>
+          <Link to={GIT_URL} target="_blank" className="bg-white mr-1 ml-1 rounded-full p-2">
             <img src="./icons/icons8-instagram.svg" alt="Instagram" />
-          </a>
-          <a href={GIT_URL} target="_blank" rel="noopener noreferrer" className="link">
+          </Link>
+          <Link to={GIT_URL} target="_blank" className="bg-white mr-1 ml-1 rounded-full p-2">
             <img src="./icons/icons8-youtube.svg" alt="Youtube" />
-          </a>
+          </Link>
         </div>
-      </footer>
-      <div className="copyrights">
+      </div>
+      <div className="text-sm text-gray-400">
         Experience the harmony of tomorrow, today, with AI-composed tunes.
       </div>
     </div>

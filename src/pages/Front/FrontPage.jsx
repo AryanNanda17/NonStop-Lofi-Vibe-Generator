@@ -14,7 +14,7 @@ const FrontPage = () => {
       <div className="flex-grow">
         <FrontCenter />
         <FrontContent />
-        <div className="mt-auto">
+        <div className="h-3/5 md:mt-20">
           <Footer />
         </div>
       </div>
