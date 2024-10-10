@@ -5,8 +5,8 @@ const Footer = () => {
   const GIT_URL = "https://github.com/AryanNanda17/NonStop-Lofi-Vibe-Generator";
   return (
     <div className="text-white bg-black p-2 md:p-4 lg:p-6">
-      <div className="flex items-center justify-between">
-        <div className="text-center md:text-left flex text-lg">
+      <div className="flex xs-max:flex-col items-center justify-between">
+        <div className="text-center md:text-left flex text-lg xs-max:flex-wrap xs-max:justify-center">
           <Link to="/about">About</Link>
           <span className="flex items-center pl-2 pr-2">|</span>
           <Link to="/contact">Feedback</Link>
@@ -30,7 +30,7 @@ const Footer = () => {
           </Link>
         </div>
       </div>
-      <div className="text-sm text-gray-400">
+      <div className="text-sm text-gray-400 xs-max:text-center xs-max:py-2">
         Experience the harmony of tomorrow, today, with AI-composed tunes.
       </div>
     </div>
