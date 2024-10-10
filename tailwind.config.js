@@ -9,6 +9,9 @@ export default {
       colors: {
         midnightblue: '#191970',
       },
+      screens: {
+        'xs-max': {'max': '750px'},
+      },
     },
   },
   plugins: [],
