@@ -1,6 +1,6 @@
 import { useTexture } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
-import React, { useMemo, useRef, useCallback } from "react";
+import React, { useMemo, useRef } from "react";
 import * as THREE from "three";
 
 const vertexShader = `
@@ -53,25 +53,40 @@ void main() {
 `;
 
 const Scene = () => {
-  const meshRef = useRef();
+  const meshref = useRef();
 
-  const updateTime = useCallback((state) => {
-    meshRef.current.material.uniforms.iTime.value = state.clock.getElapsedTime() + 20;
-  }, []);
+  useFrame((state) => {
+    let time = state.clock.getElapsedTime();
+    meshref.current.material.uniforms.iTime.value = time + 20;
+  });
 
-  useFrame(updateTime);
+  const noiseTexture1 = useTexture("/images/noise3.png");
+  const noiseTexture2 = useTexture("/images/download.png");
 
-  const [noiseTexture1, noiseTexture2] = useTexture(["/images/noise3.png", "/images/download.png"]);
-
-  const uniforms = useMemo(() => ({
-    iTime: { value: 1.0 },
-    iResolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) },
-    iChannel0: { value: noiseTexture2 },
-    iChannel1: { value: noiseTexture1 },
-  }), [noiseTexture1, noiseTexture2]);
+  const uniforms = useMemo(
+    () => ({
+      iTime: {
+        type: "f",
+        value: 1.0,
+      },
+      iResolution: {
+        type: "v2",
+        value: new THREE.Vector2(window.innerWidth, window.innerHeight),
+      },
+      iChannel0: {
+        type: "t",
+        value: noiseTexture2,
+      },
+      iChannel1: {
+        type: "t",
+        value: noiseTexture1,
+      },
+    }),
+    []
+  );
 
   return (
-    <mesh ref={meshRef}>
+    <mesh ref={meshref}>
       <planeGeometry args={[2, 4]} />
       <shaderMaterial
         uniforms={uniforms}
@@ -82,9 +97,10 @@ const Scene = () => {
   );
 };
 
-const Wave = () => (
-  <>
-    <audio loop autoPlay>
+const Wave = () => {
+  return (
+    <>
+    <audio controls={false} loop autoPlay>
       <source src="./music3.mp3" type="audio/mpeg" />
       Your browser does not support the audio element.
     </audio>
@@ -92,6 +108,7 @@ const Wave = () => (
       <Scene />
     </Canvas>
   </>
-);
+  );
+};
 
 export default Wave;
