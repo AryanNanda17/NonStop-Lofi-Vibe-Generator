@@ -1,8 +1,5 @@
-import React, { memo, useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
-import { useRef } from "react";
-import "./sound.css";
 import * as THREE from "three";
 import { CSS2DRenderer } from "three/examples/jsm/renderers/CSS2DRenderer.js";
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer";
@@ -11,13 +8,46 @@ import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPa
 import { OutputPass } from "three/examples/jsm/postprocessing/OutputPass";
 import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
+import "./sound.css";
 
-const Sound = () => {
-  const refContainer = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
+// Custom hook for audio logic
+function useAudio(playlist) {
   const [audio, setAudio] = useState(null);
+  const [audioLoader, setAudioLoader] = useState(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentSongIndex, setCurrentSongIndex] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
 
-  const togglePlay = () => {
+  const loadSong = useCallback(
+    (url) => {
+      if (audioLoader && audio) {
+        audio.stop();
+        audioLoader.load(
+          url,
+          (buffer) => {
+            audio.setBuffer(buffer);
+            audio.setLoop(false);
+            setIsLoaded(true);
+            if (isPlaying) {
+              audio.play();
+            }
+          },
+          (xhr) => {
+            console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
+          },
+          (error) => {
+            console.error("An error occurred while loading audio:", error);
+            setCurrentSongIndex(
+              (prevIndex) => (prevIndex + 1) % playlist.length
+            );
+          }
+        );
+      }
+    },
+    [audio, audioLoader, isPlaying, playlist.length]
+  );
+
+  const togglePlay = useCallback(() => {
     if (audio) {
       if (!isPlaying) {
         audio.play();
@@ -26,7 +56,34 @@ const Sound = () => {
       }
       setIsPlaying(!isPlaying);
     }
+  }, [audio, isPlaying]);
+
+  useEffect(() => {
+    if (audio && audioLoader) {
+      loadSong(playlist[currentSongIndex]);
+
+      audio.onEnded = () => {
+        setCurrentSongIndex((prevIndex) => (prevIndex + 1) % playlist.length);
+      };
+    }
+  }, [currentSongIndex, audio, audioLoader, loadSong, playlist]);
+
+  return {
+    audio,
+    setAudio,
+    audioLoader,
+    setAudioLoader,
+    isPlaying,
+    togglePlay,
+    isLoaded,
   };
+}
+
+const Sound = () => {
+  const refContainer = useRef(null);
+  const playlist = ["./music1.mp3", "./music2.mp3", "./music3.mp3", "./music4.mp3", "./music5.mp3", "./music6.mp3"];
+  const { setAudio, setAudioLoader, isPlaying, togglePlay } =
+    useAudio(playlist);
 
   useEffect(() => {
     const renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -222,13 +279,10 @@ const Sound = () => {
     camera.add(listener);
 
     const sound = new THREE.Audio(listener);
+    const loader = new THREE.AudioLoader();
 
-    const audioLoader = new THREE.AudioLoader();
-
-    audioLoader.load("./music1.mp3", function (buffer) {
-      sound.setBuffer(buffer);
-      setAudio(sound);
-    });
+    setAudio(sound);
+    setAudioLoader(loader);
 
     const analyser = new THREE.AudioAnalyser(sound, 32);
 
@@ -274,10 +328,16 @@ const Sound = () => {
       bloomComposer.setSize(window.innerWidth, window.innerHeight);
       labelRenderer.setSize(window.innerWidth, window.innerHeight);
     });
+
+    // Effect cleanup
     return () => {
+      if (sound) {
+        sound.stop();
+      }
+      window.removeEventListener("resize", () => {});
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  }, [setAudio, setAudioLoader]);
 
   return (
     <motion.div
@@ -321,7 +381,7 @@ const Sound = () => {
                 Music Experience
               </Link>
             </button>
-            <br class="lg:hidden" />
+            <br className="lg:hidden" />
             <button className="p-2 lg:p-4 rounded-md bg-gradient-to-r from-violet-600 to-pink-500 transition-all duration-300">
               <Link to="https://lofivibe-oaptuqixw-aryannanda17s-projects.vercel.app/">
                 AI Generated Music
