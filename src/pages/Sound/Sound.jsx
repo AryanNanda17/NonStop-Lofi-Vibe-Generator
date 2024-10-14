@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useRef } from "react";
@@ -334,4 +334,4 @@ const Sound = () => {
   );
 };
 
-export default Sound;
+export default memo(Sound);
