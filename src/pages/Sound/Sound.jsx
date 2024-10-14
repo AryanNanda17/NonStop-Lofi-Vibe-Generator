@@ -394,4 +394,4 @@ const Sound = () => {
   );
 };
 
-export default memo(Sound);
+export default Sound
