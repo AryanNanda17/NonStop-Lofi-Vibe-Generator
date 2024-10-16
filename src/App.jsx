@@ -1,10 +1,12 @@
 import React, { lazy, Suspense } from "react";
-import { Routes, useLocation } from "react-router-dom";
-import { Route } from "react-router-dom";
-import Login from "./pages/Login/Login";
-import Signup from "./pages/Signup/Signup";
+import { Routes, Route, useLocation, Outlet } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import "./App.css";
+import Curve from "./components/curve/Curve";
+
+// Import components
+import Login from "./pages/Login/Login";
+import Signup from "./pages/Signup/Signup";
 import FrontPage from "./pages/Front/FrontPage";
 import Profile from "./pages/Profile/Profile";
 import PrivateRoute from "./components/PrivateRoute";
@@ -24,57 +26,61 @@ const BigBang = lazy(() => import("./pages/Experience/BigBang"));
 
 const App = () => {
   const location = useLocation();
+
   return (
-    <div>
-      <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
-          <Route path="/login" Component={Login} />
-          <Route path="/signup" Component={Signup} />
-          <Route 
-            path="/experience" 
-            element={
-              <Suspense fallback={<div>Loading...</div>}>
-                <Main />
-              </Suspense>
-            } 
-          />
-          <Route 
-            path="/bang" 
-            element={
-              <Suspense fallback={<div>Loading...</div>}>
-                <BigBang />
-              </Suspense>
-            } 
-          />
-          <Route element={<PrivateRoute />}>
-            <Route path="/profile" Component={Profile} />
-            <Route path="/update" Component={Update} />
-          </Route>
-          <Route 
-            path="/brain" 
-            element={
-              <Suspense fallback={<div>Loading...</div>}>
-                <DigitalBrain />
-              </Suspense>
-            } 
-          />
-          <Route 
-            path="/wave" 
-            element={
-              <Suspense fallback={<div>Loading...</div>}>
-                <Wave />
-              </Suspense>
-            } 
-          />
-          <Route path="/" Component={FrontPage} />
-          <Route path="/play" Component={Play} />
-          <Route path="/contact" Component={Contact} />
-          <Route path="/about" Component={Developer} />
-          <Route path="/ressuccess" Component={ResSuccess} />
-          <Route path="/about" Component={Developer} />
-          <Route path="/compose" Component={Compose} />
-          <Route path="/research" Component={Research} />
-        </Routes>
+    <div className="relative">
+      <AnimatePresence mode="wait"  >
+        <Curve key={location.pathname}>
+          <Routes location={location}>
+            <Route element={<Outlet />}>
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route
+                path="/experience"
+                element={
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <Main />
+                  </Suspense>
+                }
+              />
+              <Route
+                path="/bang"
+                element={
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <BigBang />
+                  </Suspense>
+                }
+              />
+              <Route element={<PrivateRoute />}>
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/update" element={<Update />} />
+              </Route>
+              <Route
+                path="/brain"
+                element={
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <DigitalBrain />
+                  </Suspense>
+                }
+              />
+              <Route
+                path="/wave"
+                element={
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <Wave />
+                  </Suspense>
+                }
+              />
+              <Route path="/" element={<FrontPage />} />
+              <Route path="/play" element={<Play />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/about" element={<Developer />} />
+              <Route path="/ressuccess" element={<ResSuccess />} />
+              <Route path="/compose" element={<Compose />} />
+              <Route path="/research" element={<Research />} />
+            </Route>
+          </Routes>
+        </Curve>
       </AnimatePresence>
     </div>
   );

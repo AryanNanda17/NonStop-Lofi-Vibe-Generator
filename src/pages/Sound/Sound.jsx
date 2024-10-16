@@ -394,4 +394,4 @@ const Sound = () => {
   );
 };
 
-export default Sound;
+export default Sound
