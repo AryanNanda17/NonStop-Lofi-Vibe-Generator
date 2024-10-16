@@ -40,15 +40,18 @@ const Footer = () => {
           </div>
           
           {/* Quick Links */}
-          <div className="space-y-4">
-            <h3 className="text-purple-400 text-lg md:text-2xl font-bold relative text-center md:text-left">
+          <div className="flex flex-col items-center md:items-start space-y-4">
+            <h3 className="text-purple-400 text-lg md:text-2xl font-bold relative">
               Quick Links
-              <span className="absolute -bottom-1 left-1/2 md:left-0 w-1/2 h-0.5 md:h-1 bg-purple-500 rounded-full transform -translate-x-1/2 md:translate-x-0"></span>
+              <span className="absolute -bottom-1 left-0 w-1/2 h-0.5 md:h-1 bg-purple-500 rounded-full"></span>
             </h3>
-            <ul className="space-y-2 md:space-y-4 text-sm md:text-base">
+            <ul className="space-y-2 md:space-y-4 text-sm md:text-base w-full">
               {["About", "Contact", "Log In", "Sign Up"].map((item) => (
-                <li key={item} className="text-center md:text-left">
-                  <a href={`/${item.toLowerCase().replace(' ', '')}`} className="group text-gray-300 hover:text-white transition-colors duration-300 inline-flex items-center">
+                <li key={item} className="flex justify-center md:justify-start">
+                  <a 
+                    href={`/${item.toLowerCase().replace(' ', '')}`} 
+                    className="group text-gray-300 hover:text-white transition-colors duration-300 inline-flex items-center"
+                  >
                     <ChevronRight size={14} className="mr-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:translate-x-1" />
                     <span className="relative">
                       {item}
