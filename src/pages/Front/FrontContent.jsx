@@ -26,7 +26,7 @@ const FrontContent = () => {
       stagger: 0.6,
       scrollTrigger: {
         trigger: container.current,
-        start: "top",
+        start: "top 50%",
         end: `+=${container.current.offsetHeight - 230}`,
         scrub: true,
       },
