@@ -60,6 +60,21 @@ function useAudio(playlist) {
   }, [audio, isPlaying]);
 
   useEffect(() => {
+    const handleKeyPress = (event) => {
+      if (event.code === "Space") {
+        event.preventDefault(); 
+        togglePlay(); 
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyPress);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyPress);
+    };
+  }, [togglePlay]);
+
+  useEffect(() => {
     if (audio && audioLoader) {
       loadSong(playlist[currentSongIndex]);
 
@@ -364,11 +379,10 @@ const Sound = () => {
         onClick={togglePlay}
       >
         {isPlaying ? (
-          <FaPause  />
+          <FaPause />
         ) : (
           <>
-            <FaPlay className="md:mr-2" />
-            <span className="text-sm font-bold hidden md:block">Click to Play</span>
+            <FaPlay />
           </>
         )}
       </motion.button>

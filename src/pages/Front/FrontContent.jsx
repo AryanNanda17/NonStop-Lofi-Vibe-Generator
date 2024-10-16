@@ -143,13 +143,6 @@ const FrontContent = () => {
                   <p className="text-purple-200 text-lg">
                     {section.description}
                   </p>
-                  <motion.button
-                    className="mt-4 px-6 py-2 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition-colors duration-300"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    Learn More
-                  </motion.button>
                 </div>
               </motion.div>
             ))}
@@ -157,42 +150,7 @@ const FrontContent = () => {
         </div>
       </div>
 
-      <motion.div
-        className="py-20 px-8 bg-gradient-to-b from-purple-900 to-black"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-white mb-8">
-            Experience LofiVibe
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {["Relax", "Focus", "Create"].map((mode) => (
-              <motion.div
-                key={mode}
-                className="bg-purple-800 p-6 rounded-lg cursor-pointer"
-                whileHover={{ scale: 1.05, backgroundColor: "#6B46C1" }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <h3 className="text-2xl font-semibold text-white mb-2">
-                  {mode}
-                </h3>
-                <p className="text-purple-200">
-                  Discover {mode.toLowerCase()} mode
-                </p>
-              </motion.div>
-            ))}
-          </div>
-          <motion.button
-            className="mt-12 px-8 py-3 bg-pink-600 text-white text-lg rounded-full hover:bg-pink-700 transition-colors duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Start Your Journey
-          </motion.button>
-        </div>
-      </motion.div>
+      
     </div>
   );
 };
