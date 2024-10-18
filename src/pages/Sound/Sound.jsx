@@ -9,6 +9,7 @@ import { OutputPass } from "three/examples/jsm/postprocessing/OutputPass";
 import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import "./sound.css";
+import { FaPlay, FaPause } from "react-icons/fa";
 
 // Custom hook for audio logic
 function useAudio(playlist) {
@@ -59,6 +60,21 @@ function useAudio(playlist) {
   }, [audio, isPlaying]);
 
   useEffect(() => {
+    const handleKeyPress = (event) => {
+      if (event.code === "Space") {
+        event.preventDefault(); 
+        togglePlay(); 
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyPress);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyPress);
+    };
+  }, [togglePlay]);
+
+  useEffect(() => {
     if (audio && audioLoader) {
       loadSong(playlist[currentSongIndex]);
 
@@ -81,7 +97,14 @@ function useAudio(playlist) {
 
 const Sound = () => {
   const refContainer = useRef(null);
-  const playlist = ["./music1.mp3", "./music2.mp3", "./music3.mp3", "./music4.mp3", "./music5.mp3", "./music6.mp3"];
+  const playlist = [
+    "./music1.mp3",
+    "./music2.mp3",
+    "./music3.mp3",
+    "./music4.mp3",
+    "./music5.mp3",
+    "./music6.mp3",
+  ];
   const { setAudio, setAudioLoader, isPlaying, togglePlay } =
     useAudio(playlist);
 
@@ -349,14 +372,20 @@ const Sound = () => {
       transition={{ duration: 1, ease: [0.22, 1, 0, 36, 1] }}
     >
       <Navbar />
-      <div className="controls absolute top-4 ml-96 z-10">
-        <button
-          onClick={togglePlay}
-          className="text-2xl p-2 bg-gray-800 text-white rounded-full"
-        >
-          {isPlaying ? "Pause" : "Play"}
-        </button>
-      </div>
+      <motion.button
+        className="fixed md:bottom-8 md:right-8 bottom-8 right-1 bg-purple-600 hover:bg-purple-700 text-white md:p-4 p-3 rounded-full shadow-lg z-50 flex items-center"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        onClick={togglePlay}
+      >
+        {isPlaying ? (
+          <FaPause />
+        ) : (
+          <>
+            <FaPlay />
+          </>
+        )}
+      </motion.button>
       <div className="controls absolute bottom-4 left-1/2 transform -translate-x-1/2">
         <div className="w-full text-center mt-32">
           <div className="p-4 text-center lg:text-9xl uppercase text-8xl tracking-widest mx-4 lg:mx-40 lg:mt-32 text-white">
