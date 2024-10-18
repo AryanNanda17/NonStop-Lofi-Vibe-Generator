@@ -7,7 +7,7 @@
 </p>
  :notes: Generating original Lofi-Music :notes:
 
-[COC](https://github.com/CommunityOfCoders/Inheritance-2023) Inheritance 2023</h3>
+</h3>
 
 </div>
 <hr>
