@@ -1,9 +1,10 @@
 *{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    font-family: 'Poppins', sans-serif;
 }
 
 #menu-toggle:checked+#menu {
-    display: block;
+    display: block;;
 }
 
 @keyframes fadeInFromLeft {
@@ -32,6 +33,3 @@
     animation: fadeInFromLeft 1s ease-out;
 }
 
-.item{
-    animation: fadeInFromBottom 1s ease-out;
-}

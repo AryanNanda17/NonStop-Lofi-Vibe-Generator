@@ -9,6 +9,9 @@ export default {
       colors: {
         midnightblue: '#191970',
       },
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+      },
     },
   },
   plugins: [],
