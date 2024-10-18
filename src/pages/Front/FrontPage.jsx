@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import FrontCenter from "./FrontCenter";
 import FrontContent from "./FrontContent";
 import Sound from "../Sound/Sound";
@@ -20,4 +20,4 @@ const FrontPage = () => {
   );
 };
 
-export default FrontPage;
+export default memo(FrontPage);
