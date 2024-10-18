@@ -7,11 +7,20 @@ on:
 jobs:
   assign-issue:
     runs-on: ubuntu-latest
-    if: github.event.comment.body == '/assign-me'
+    if: github.event.comment.body == '/assign'
     steps:
     - name: Assign issue to commenter
-      uses: actions-ecosystem/action-assign@v1
+      uses: actions/github-script@v6
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        issue_number: ${{ github.event.issue.number }}
-        assignees: ${{ github.event.comment.user.login }}
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          const issueNumber = context.payload.issue.number;
+          const commenter = context.payload.comment.user.login;
+
+          // Assign the issue to the commenter
+          await github.issues.addAssignees({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number: issueNumber,
+            assignees: [commenter]
+          });
