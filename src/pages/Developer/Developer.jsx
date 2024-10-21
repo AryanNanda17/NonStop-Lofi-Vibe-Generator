@@ -2,12 +2,11 @@
 import React from "react";
 import Navbar from "../../components/Navbar";
 
-
 const Developer = () => {
     return (
-        <div className="bg-black min-h-screen text-justify tracking-wider leading-relaxed">
+        <div className="bg-black min-h-screen text-justify tracking-wider leading-relaxed pt-32">
             <Navbar />
-            <div className="border-x border-white rounded-md w-[97%] mx-auto p-10 mt-4">
+            <div className="border-x border-white rounded-md w-[97%] mx-auto p-10">
                 <div>
                     <div className="">
                         <h1 className="font-medium text-3xl text-white">Who Are We?</h1>
@@ -19,7 +18,7 @@ const Developer = () => {
                             to provide a unique and immersive musical experience.
                         </p>
                     </div>
-                    
+
                     <div className="flex items-start justify-center gap-x-20 mt-10"> 
                         <div className="">
                             <h1 className="text-3xl font-medium text-white">Features</h1>
