@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import Navbar from "../../components/Navbar";
+import { FaMusic, FaBrain } from "react-icons/fa";
 
 const Developer = () => {
     return (
@@ -77,8 +78,7 @@ const Developer = () => {
                     </div>
                 </div>
             </div>
-        </div>
-    );
+  );
 };
 
 export default Developer;
