@@ -74,7 +74,7 @@ const OAuth = () => {
       <button
         type="button"
         onClick={handleGoogle}
-        className="bg-gradient-to-r from-violet-600 to-pink-500 w-full py-3 sm:py-4 px-4 sm:px-6 flex justify-center items-center text-xl sm:text-2xl rounded-md hover:scale-110 transition-all duration-300"
+        className="bg-gradient-to-r from-violet-600 to-pink-500 w-full py-3 sm:py-4 px-4 sm:px-6 flex justify-center items-center text-xl sm:text-2xl rounded-xl hover:scale-110 transition-all duration-300"
       >
         <img
           src="./icons/google.svg"
@@ -85,7 +85,7 @@ const OAuth = () => {
       </button>
       <button
         type="button"
-        className="bg-gradient-to-r from-violet-600 to-pink-500 w-full mt-3 py-3 sm:py-4 px-4 sm:px-6 flex items-center justify-center text-xl sm:text-2xl rounded-md hover:scale-110 transition-all duration-300"
+        className="bg-gradient-to-r from-violet-600 to-pink-500 w-full mt-3 py-3 sm:py-4 px-4 sm:px-6 flex items-center justify-center text-xl sm:text-2xl rounded-xl hover:scale-110 transition-all duration-300"
         onClick={handleGithub}
       >
         <img
