@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../../components/Navbar";
 import { motion } from "framer-motion";
+import { RiFeedbackLine } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 
 const Contact = () => {
@@ -31,53 +32,72 @@ const Contact = () => {
       console.log(err);
     }
   };
+
   return (
     <motion.div
-      className="bg-black h-screen text-white"
+      className="bg-black min-h-screen text-white flex flex-col items-center"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
     >
       <Navbar />
-      <div className="">
-        <div className="flex items-center justify-center">
-          <form action="" className="mt-24" onSubmit={handleSubmit}>
-            <h1 className="p-2 text-3xl text-center">Your Feedback</h1>
-            <p className="text-2xl tracking-wide">
-              Please consider giving a valuable feedback on our project which
-              will help us make lofivibe even better
-            </p>
-
-            <div className="flex items-center justify-center flex-col mt-20">
-              <div className="">
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  onChange={handleChange}
-                  className="p-4 w-full mr-28 bg-black border-solid border-2 border-white rounded-md"
-                  placeholder="Your email address"
-                />
-              </div>
-              <div className="mt-8">
-                <textarea
-                  name="response"
-                  id="response"
-                  cols="30"
-                  rows="10"
-                  onChange={handleChange}
-                  className="p-6 bg-black border-solid border-2 border-white rounded-md"
-                  placeholder="Your Feedback"
-                />
-                <br />
-                <button
-                  type="submit"
-                  className="mt-3 w-full text-white bg-gradient-to-r from-violet-600 to-pink-500 font-semibold p-3 rounded-md text-xl hover:scale-110 transition-all duration-300"
-                >
-                  Submit
-                </button>
-              </div>
+      <div className="flex flex-col items-center justify-center py-12 px-6 md:px-0 mt-44">
+        <div className="w-full max-w-lg bg-gray-900 rounded-lg p-8 shadow-md">
+          <h1 className="text-4xl font-bold text-center mb-8 flex items-center justify-center">
+            Your Feedback
+            <RiFeedbackLine
+              color="white"
+              size={40}
+              className="ml-4 mt-[0.5]"
+            />
+          </h1>
+          <p className="text-lg text-gray-400 text-center mb-8">
+            We value your feedback to make LofiVibe even better!
+          </p>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div>
+              <label
+                htmlFor="email"
+                className="block text-lg font-semibold text-gray-300"
+              >
+                Email Address
+              </label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                onChange={handleChange}
+                className="mt-2 p-4 w-full bg-gray-800 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-600 text-white placeholder-gray-400"
+                placeholder="Enter your email address"
+                required
+              />
+            </div>
+            <div>
+              <label
+                htmlFor="response"
+                className="block text-lg font-semibold text-gray-300"
+              >
+                Your Feedback
+              </label>
+              <textarea
+                name="response"
+                id="response"
+                cols="30"
+                rows="6"
+                onChange={handleChange}
+                className="mt-2 p-4 w-full bg-gray-800 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-600 text-white placeholder-gray-400"
+                placeholder="Please share your feedback"
+                required
+              />
+            </div>
+            <div className="flex justify-center">
+              <button
+                type="submit"
+                className="mt-4 w-full bg-gradient-to-r from-violet-600 to-pink-500 text-xl font-semibold py-3 rounded-lg hover:scale-105 transform transition duration-300"
+              >
+                Submit Feedback
+              </button>
             </div>
           </form>
         </div>
