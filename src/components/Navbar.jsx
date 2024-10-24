@@ -1,7 +1,7 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./navbar.css";
-import gsap from "gsap";
 import { useSelector } from "react-redux";
 
 const Navbar = () => {

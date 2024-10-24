@@ -14,6 +14,7 @@ import Contact from "./pages/Contact/Contact";
 import Developer from "./pages/Developer/Developer";
 import ResSuccess from "./pages/Contact/ResSuccess";
 import Compose from "./pages/Compose/Compose";
+import Music from "./pages/Music/Music";
 import Research from "./pages/Research/Research";
 
 // Lazy load components
@@ -69,6 +70,7 @@ const App = () => {
           <Route path="/" Component={FrontPage} />
           <Route path="/play" Component={Play} />
           <Route path="/contact" Component={Contact} />
+          <Route path="/music" Component={Music}/>
           <Route path="/about" Component={Developer} />
           <Route path="/ressuccess" Component={ResSuccess} />
           <Route path="/about" Component={Developer} />
