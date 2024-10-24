@@ -78,6 +78,7 @@ const Developer = () => {
                     </div>
                 </div>
             </div>
+            </div>
   );
 };
 
